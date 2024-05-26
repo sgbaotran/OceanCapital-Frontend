@@ -19,8 +19,8 @@ function Card({ bankName, cardNumber, balance, cardHolder, expiryDate, cvv }) {
 
       <div className="middle">
         <div>
-          <h1>{addDotEveryFourChars(cardNumber)}</h1>
-          <h1>${balance.toLocaleString()}</h1>
+          <h3>{addDotEveryFourChars(cardNumber)}</h3>
+          <h2><strong>${balance.toLocaleString()}</strong></h2>
 
         </div>
         <div className="chip">

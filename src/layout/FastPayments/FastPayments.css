@@ -1,0 +1,15 @@
+/* ======================== FAST PAYMENT ======================== */
+main .fast-payment {
+  margin-top: 2rem;
+  display: flex;
+  align-self: center;
+  gap: 2rem;
+}
+
+main .fast-payment .badge:first-child span {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  height: fit-content;
+  font-size: 1.5rem;
+}

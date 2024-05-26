@@ -2,10 +2,12 @@
 import Cards from 'layout/Cards/Cards';
 import React from 'react';
 import MonthlyReports from 'layout/MonthlyReports/MonthlyReports';
-import Chart from 'components/UI/Chart';
+import Chart from 'components/ui/Chart';
 import Investments from 'layout/Investments/Investments';
 import RecentTransactions from 'layout/RecentTransactions/RecentTransactions';
 import "./styles/Dashboard.css"
+
+import FastPayments from 'layout/FastPayments/FastPayments';
 
 function Dashboard() {
   return (
@@ -22,6 +24,8 @@ function Dashboard() {
 
         <MonthlyReports />
 
+        <FastPayments />
+
         <Chart />
 
       </section >
@@ -32,7 +36,7 @@ function Dashboard() {
         <Investments></Investments>
 
         <RecentTransactions></RecentTransactions>
-        
+
       </section >
 
     </>
