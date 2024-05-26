@@ -1,0 +1,23 @@
+/*==================== RECENT TRANSACTION ====================*/
+
+.recent-transactions {
+  margin-top: 2rem;
+}
+
+.recent-transactions img {
+  width: 2.2rem;
+}
+
+.recent-transactions .header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.recent-transactions .header a {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+

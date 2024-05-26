@@ -1,0 +1,28 @@
+.investments {
+  background: var(--color-white);
+  border-radius: var(--card-border-radius);
+}
+
+.investments img {
+  width: 2.4rem;
+}
+
+.investments .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--card-padding);
+  padding-bottom: 0;
+}
+
+.investments .header a {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+
+.investments .investment:last-child {
+  border: none;
+}
+
