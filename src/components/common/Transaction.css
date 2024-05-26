@@ -5,11 +5,14 @@
   padding: 1.5rem var(--card-padding);
   border-radius: var(--card-border-radius);
   transition: all 300ms ease;
+  background: var(--color-white);
+
 }
 
 .transaction:hover {
-  background: var(--color-white);
   cursor: pointer;
+  background: var(--color-light);
+
 }
 
 .transaction .service {

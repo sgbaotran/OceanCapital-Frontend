@@ -5,6 +5,7 @@ import "./styles/Dashboard.css"
 import MonthlyReports from 'components/layout/MonthlyReports/MonthlyReports';
 import Chart from 'components/common/Chart';
 import Investments from 'components/layout/Investments/Investments';
+import RecentTransactions from 'components/layout/RecentTransactions/RecentTransactions';
 
 function Dashboard() {
   return (
@@ -29,6 +30,7 @@ function Dashboard() {
 
       <section className="right">
         <Investments></Investments>
+        <RecentTransactions></RecentTransactions>
       </section >
 
     </>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Transaction.css'
 
-function Transaction(props) {
+function Transaction() {
   return (
     <div class="transaction">
       <div class="service">
