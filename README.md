@@ -4,6 +4,14 @@ Okane (Money in Japanese) is an application developed by Gia Bao Tran in order t
 
 Keep in mind that this is just the front end of the project, check my repos to view the backend code
 
+## Features
+
+- View Card Balance (depends on bank APIs)
+- Stock Price Information
+- Transaction logs
+- Group expenses
+- TBU
+
 ## Technology
 
 This project is written in MERN stack and utilized Docker and Jenkins for CI/CD practices (might as well use AWS for hosting 🤔)
