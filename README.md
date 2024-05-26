@@ -6,7 +6,7 @@ Keep in mind that this is just the front end of the project, check my repos to v
 
 ## Technology
 
-This project is written in ReactJS and utilized Docker and Jenkins for CI/CD practices
+This project is written in MERN stack and utilized Docker and Jenkins for CI/CD practices (might as well use AWS for hosting 🤔)
 
 ### `npm start`
 
@@ -16,7 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### Shout out
+## Shout out
 
 HTML/CSS source code is provided publicly by [EGATOR](https://www.youtube.com/@EGATORTUTORIALS) youtube channel.
 Thank you for your tutorial!
