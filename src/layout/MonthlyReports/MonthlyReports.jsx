@@ -1,6 +1,6 @@
 import React from 'react';
 import './MonthlyReport.css'
-import Report from 'components/common/Report';
+import Report from 'components/UI/Report';
 
 
 function MonthlyReports(props) {

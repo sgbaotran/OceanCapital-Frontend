@@ -1,6 +1,6 @@
 import React from 'react';
 import './Investments.css'
-import Investment from 'components/common/Investment';
+import Investment from 'components/UI/Investment';
 import { NavLink } from 'react-router-dom';
 
 function Investments(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Transaction from 'components/common/Transaction';
+import Transaction from 'components/UI/Transaction';
 
 import './RecentTransactions.css'
 function RecentTransactions() {

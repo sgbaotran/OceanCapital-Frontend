@@ -1,11 +1,11 @@
 
-import Cards from 'components/layout/Cards/Cards';
+import Cards from 'layout/Cards/Cards';
 import React from 'react';
+import MonthlyReports from 'layout/MonthlyReports/MonthlyReports';
+import Chart from 'components/UI/Chart';
+import Investments from 'layout/Investments/Investments';
+import RecentTransactions from 'layout/RecentTransactions/RecentTransactions';
 import "./styles/Dashboard.css"
-import MonthlyReports from 'components/layout/MonthlyReports/MonthlyReports';
-import Chart from 'components/common/Chart';
-import Investments from 'components/layout/Investments/Investments';
-import RecentTransactions from 'components/layout/RecentTransactions/RecentTransactions';
 
 function Dashboard() {
   return (
@@ -30,7 +30,9 @@ function Dashboard() {
 
       <section className="right">
         <Investments></Investments>
+
         <RecentTransactions></RecentTransactions>
+        
       </section >
 
     </>

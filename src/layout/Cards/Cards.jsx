@@ -1,6 +1,6 @@
 import React from 'react';
 import './Cards.css'
-import Card from 'components/common/Card';
+import Card from 'components/UI/Card';
 
 function Cards() {
   const cardDatas = [
