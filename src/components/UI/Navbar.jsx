@@ -1,5 +1,5 @@
 import './Navbar.css'
-export default function Navbar() {
+export default function Navbar({onSetDarkMode}) {
     return (
         <nav>
             <div className="container">
@@ -11,7 +11,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="profile-area">
-                    <div className="theme-btn">
+                    <div className="theme-btn" onClick={onSetDarkMode}>
                         <span className="material-icons-sharp active">dark_mode</span>
                         <span className="material-icons-sharp">light_mode</span>
                     </div>
