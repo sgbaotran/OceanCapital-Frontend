@@ -1,5 +1,5 @@
 :root {
-  --color-white: #ffffff;
+  --color-white: #ffffff !important;
   --color-light: #f0eff5;
   --color-gray-light: #86848c;
   --color-gray-dark: #56555e;
@@ -22,10 +22,10 @@
 }
 
 .dark-theme {
-  --color-white:#131316;
-  --color-light:#23232a;
-  --color-dark:#ddd;
-  --color-gray-dark:#adacb5;
+  --color-white: #131316;
+  --color-light: #23232a;
+  --color-dark: #ddd;
+  --color-gray-dark: #adacb5;
 }
 
 * {
@@ -148,4 +148,94 @@ small {
 
 .bg-purple-light {
   background: var(--color-purple-light);
+}
+
+
+
+/*==================== MEDIA QUERIES FOR TABLETS ====================*/
+
+@media screen and (max-width:1024px) {
+
+
+  main aside {
+    position: fixed !important;
+    top: 0 !important;
+    left: -100% !important;
+    z-index: 3 !important;
+    background: var(--color-white) !important;
+    width: 22rem !important;
+    height: 100vh !important;
+    box-shadow: 2rem 0 2rem var(--color-primary-light) !important;
+    display: none !important;
+    animation: showSidebar 300ms ease forwards !important;
+  }
+
+  @keyframes showSidebar {
+
+    to {
+      left: 0
+    }
+  }
+
+  main aside button#close-btn {
+    display: inline-block !important;
+    width: 3rem !important;
+    height: 3rem !important;
+    position: absolute !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    z-index: 4 !important;
+    background: transparent !important;
+    color: var(--color-dark) !important;
+  }
+
+  button:hover {
+    cursor: pointer !important;
+  }
+
+  main aside .sidebar {
+    margin-top: 4rem !important;
+  }
+
+  main aside .updates {
+    display: none !important;
+  }
+
+  main section.middle .cards {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  main canvas {
+    margin: 3rem 0 1rem !important;
+  }
+
+  main section.right .recent-transactions {
+    margin-top: 3rem !important;
+  }
+
+}
+
+/*==================== MEDIA QUERIES FOR PHONES ====================*/
+
+@media screen and (max-width:600px) {
+  nav .profile-area {
+    gap: 2.6rem !important;
+  }
+
+  nav .profile-area h5,
+  nav .profile span {
+    display: none !important;
+  }
+
+  main section.middle .cards {
+    grid-template-columns: 1fr
+  }
+
+  main section.middle .fast-payment {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin-top: 3rem !important;
+    gap: 1.4rem
+  }
+
 }

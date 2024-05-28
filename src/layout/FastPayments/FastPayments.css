@@ -13,3 +13,12 @@ main .fast-payment .badge:first-child span {
   height: fit-content;
   font-size: 1.5rem;
 }
+
+@media screen and (max-width:600px) {
+  .fast-payment {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin-top: 3rem !important;
+    gap: 1.4rem
+  }
+}

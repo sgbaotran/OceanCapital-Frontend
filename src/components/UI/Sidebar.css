@@ -1,13 +1,6 @@
 /* ======================== ASIDE & SIDEBAR ======================== */
-main {
-  display: grid;
-  grid-template-columns: 16rem auto 30rem;
-  gap: 2rem;
-  width: 96%;
-  margin: 1rem auto 4rem;
-}
 
-main aside {
+aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,11 +8,11 @@ main aside {
 }
 
 /* Only on mobile and tablets */
-main aside button#close-btn {
+aside button#close-btn {
   display: none;
 }
 
-main aside .sidebar a {
+aside .sidebar a {
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -28,18 +21,18 @@ main aside .sidebar a {
   position: relative;
 }
 
-main aside .sidebar a span {
+aside .sidebar a span {
   font-size: 1.7rem;
   margin-left: 3rem;
   transition: all 300ms ease;
 }
 
-main aside .sidebar a.active {
+aside .sidebar a.active {
   background: var(--color-white);
   color: var(--color-primary);
 }
 
-main aside .sidebar a.active::before {
+aside .sidebar a.active::before {
   content: '';
   width: 6px;
   height: 100%;
@@ -47,35 +40,35 @@ main aside .sidebar a.active::before {
   background: var(--color-primary);
 }
 
-main aside .sidebar a:hover {
+aside .sidebar a:hover {
   color: var(--color-primary);
 }
 
-main aside .sidebar a:hover span {
+aside .sidebar a:hover span {
   margin-left: 2rem;
 }
 
-main aside .sidebar h4 {
+aside .sidebar h4 {
   font-weight: 500;
 }
 
 /* ======================== UPDATES ======================== */
-main aside .updates {
+aside .updates {
   background: var(--color-white);
   border-radius: var(--border-radius-1);
   text-align: center;
   padding: var(--card-padding);
 }
 
-main aside .updates span {
+aside .updates span {
   font-size: 2.8rem;
 }
 
-main aside .updates h4 {
+aside .updates h4 {
   margin: 1rem 0;
 }
 
-main aside .updates a {
+aside .updates a {
   display: block;
   width: 100%;
   background: var(--color-primary);
@@ -86,6 +79,49 @@ main aside .updates a {
   transition: all 30ms ease;
 }
 
-main aside .updates a:hover {
+aside .updates a:hover {
   box-shadow: 0 1rem 2rem var(--color-primary-light);
+}
+
+
+@media screen and (max-width:1024px) {
+  aside {
+    position: fixed !important;
+    top: 0 !important;
+    left: -100% !important;
+    z-index: 3 !important;
+    background: var(--color-white) !important;
+    width: 22rem !important;
+    height: 100vh !important;
+    box-shadow: 2rem 0 2rem var(--color-primary-light) !important;
+    display: none !important;
+    animation: showSidebar 300ms ease forwards !important;
+  }
+
+  @keyframes showSidebar {
+
+    to {
+      left: 0
+    }
+  }
+
+  aside button#close-btn {
+    display: inline-block !important;
+    width: 3rem !important;
+    height: 3rem !important;
+    position: absolute !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    z-index: 4 !important;
+    background: transparent !important;
+    color: var(--color-dark) !important;
+  }
+
+  aside .sidebar {
+    margin-top: 4rem !important;
+  }
+
+  aside .updates {
+    display: none !important;
+  }
 }

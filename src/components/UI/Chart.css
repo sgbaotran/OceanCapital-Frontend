@@ -5,3 +5,9 @@ canvas#chart {
   border-radius: var(--card-border-radius);
   padding: var(--card-padding);
 }
+
+@media screen and (max-width:1024px) {
+  canvas {
+    margin: 3rem 0 1rem !important;
+  }
+}

@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Card.css'
 
 
-function addDotEveryFourChars(str) {
+
+
+function formatCardNumber(str) {
   return str.match(/.{1,4}/g).join(' ');
 }
 
+function hideCardNumber(str) {
+  return "**** **** **** " + str.slice(-4);;
+}
+
+
 function Card({ bankName, cardNumber, balance, cardHolder, expiryDate, cvv }) {
+  const [showCardNum, setShowCardNnum] = useState(false)
+  const [showCardCvv, setShowCardCvv] = useState(false)
+
+
+  function handleShowCardNum() {
+    setShowCardNnum(isCardNumShown => !isCardNumShown)
+  }
+
+  function handleShowCardCvv() {
+    setShowCardCvv(isCardCvvShown => !isCardCvvShown)
+  }
+
+
   return (
     <div className="card">
       <div className="top">
@@ -19,7 +39,7 @@ function Card({ bankName, cardNumber, balance, cardHolder, expiryDate, cvv }) {
 
       <div className="middle">
         <div>
-          <h3>{addDotEveryFourChars(cardNumber)}</h3>
+          <h3 onClick={handleShowCardNum}>{showCardNum ? formatCardNumber(cardNumber) : hideCardNumber(cardNumber)}</h3>
           <h2><strong>${balance.toLocaleString()}</strong></h2>
 
         </div>
@@ -40,8 +60,8 @@ function Card({ bankName, cardNumber, balance, cardHolder, expiryDate, cvv }) {
           </div>
 
           <div className="cvv">
-            <small>CVV</small>
-            <h5>{cvv}</h5>
+            <small >CVV</small>
+            <h5 onClick={handleShowCardCvv}>{showCardCvv ? cvv : "***"}</h5>
           </div>
         </div>
       </div>

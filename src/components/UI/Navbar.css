@@ -90,3 +90,38 @@ nav .profile-area .profile-photo {
 nav .profile-area button {
   display: none;
 }
+
+/*==================== MEDIA QUERIES FOR TABLETS ====================*/
+
+@media screen and (max-width:1024px) {
+  nav .search-bar {
+    display: none !important;
+  }
+
+  nav .profile-area {
+    gap: 2rem
+  }
+
+  nav .profile-area button#menu-btn {
+    display: inline !important;
+    background: transparent !important;
+    color: var(--color-dark) !important;
+  }
+
+}
+
+/*==================== MEDIA QUERIES FOR PHONES ====================*/
+
+@media screen and (max-width:600px) {
+  nav .profile-area {
+    gap: 2.6rem !important;
+  }
+
+  nav .profile-area h5,
+  nav .profile span {
+    display: none !important;
+  }
+
+
+
+}
