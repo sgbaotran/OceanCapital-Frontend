@@ -6,6 +6,8 @@ import './styles/Root.css'
 
 
 function RootLayout() {
+
+  // ==================== HANLDING DARKMODE ==================== //
   const [darkMode, setDarkMode] = useState(() => {
     const savedThemeMode = localStorage.getItem("themeMode");
     return savedThemeMode ? savedThemeMode === 'dark' : false;

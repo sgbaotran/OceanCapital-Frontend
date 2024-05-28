@@ -38,11 +38,11 @@ function Card({ bankName, cardNumber, balance, cardHolder, expiryDate, cvv }) {
       </div>
 
       <div className="middle">
-        <div>
-          <h3 onClick={handleShowCardNum}>{showCardNum ? formatCardNumber(cardNumber) : hideCardNumber(cardNumber)}</h3>
+        <div onClick={handleShowCardNum}>
+          <h3 className="card-number" >{showCardNum ? formatCardNumber(cardNumber) : hideCardNumber(cardNumber)}</h3>
           <h2><strong>${balance.toLocaleString()}</strong></h2>
-
         </div>
+
         <div className="chip">
           <img src={require("assets/images/card chip.png")} alt="something" className="chip" />
         </div>
@@ -59,9 +59,9 @@ function Card({ bankName, cardNumber, balance, cardHolder, expiryDate, cvv }) {
             <h5>{expiryDate}</h5>
           </div>
 
-          <div className="cvv">
+          <div onClick={handleShowCardCvv} className="cvv">
             <small >CVV</small>
-            <h5 onClick={handleShowCardCvv}>{showCardCvv ? cvv : "***"}</h5>
+            <h5 >{showCardCvv ? cvv : "***"}</h5>
           </div>
         </div>
       </div>

@@ -8,8 +8,11 @@ import RecentTransactions from 'layout/RecentTransactions/RecentTransactions';
 import "./styles/Dashboard.css"
 
 import FastPayments from 'layout/FastPayments/FastPayments';
+import NewCardModal from 'components/form/NewCardModal';
+
 
 function Dashboard() {
+
   return (
     <>
       <section className="middle">
@@ -28,11 +31,14 @@ function Dashboard() {
 
         <Chart />
 
+        <NewCardModal></NewCardModal>
+
       </section >
 
 
 
       <section className="right">
+
         <Investments></Investments>
 
         <RecentTransactions></RecentTransactions>
