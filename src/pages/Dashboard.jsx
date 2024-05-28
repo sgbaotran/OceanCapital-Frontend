@@ -8,6 +8,7 @@ import RecentTransactions from 'layout/RecentTransactions/RecentTransactions';
 import "./styles/Dashboard.css"
 
 import FastPayments from 'layout/FastPayments/FastPayments';
+import NewCardModal from 'components/form/NewCardModal';
 
 
 function Dashboard() {
@@ -43,6 +44,7 @@ function Dashboard() {
 
         <RecentTransactions></RecentTransactions>
 
+        <NewCardModal></NewCardModal>
       </section >
 
     </>
