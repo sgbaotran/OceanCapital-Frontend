@@ -25,6 +25,7 @@ function RootLayout() {
   }
 
   return (<>
+
     <Navbar onSetDarkMode={handleSetDarkMode} />
 
     <main>
