@@ -1,20 +1,12 @@
+import './NewCardButton.css';
 
-import './NewCardButton.css'
-
-
-function NewCardButton({ onClick }) {
-
-
+function NewCardButton({ handleOnOpen }) {
   return (
-
-    <div className="new-card-button">
-     <img src={require("assets/images/plus-sign.png")} alt='plus sign'/>
-
+    <div onClick={handleOnOpen} className="new-card-button">
+      {/* Button icon for adding a new card */}
+      <img src={require("assets/images/plus-sign.png")} alt='plus sign' />
     </div>
-
   );
-
-
 }
 
 export default NewCardButton;
