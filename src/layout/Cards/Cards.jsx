@@ -57,12 +57,7 @@ function Cards() {
         {cardDatas.map(card => (
           <Card
             key={card.cardNumber} // Adding a key to help React identify each element
-            bankName={card.bankName}
-            cardNumber={card.cardNumber}
-            balance={card.balance}
-            cardHolder={card.cardHolder}
-            expiryDate={card.expiryDate}
-            cvv={card.cvv}
+            {...card}
           />
         ))}
 

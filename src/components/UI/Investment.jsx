@@ -1,7 +1,7 @@
 import React from 'react';
 import './Investment.css'
 
-function Invesment({ title }) {
+function Invesment({ title, price, quantity, diffPercentage, isGain }) {
   return (
     <div className="investment">
       <img src={require("assets/images/uniliver.png")} alt="" />
@@ -11,12 +11,14 @@ function Invesment({ title }) {
         <small className="text-muted">9:14pm</small>
       </div>
       <div className="bonds">
-        <p>11</p>
+        <p>{quantity}</p>
         <small className="text-muted">Bonds</small>
       </div>
       <div className="amount">
-        <h4>$20.033</h4>
-        <small className="success">+4,27%</small>
+        <h4>${price}</h4>
+        <small className={isGain ? 'success' : 'danger'}>
+          {isGain ? '+' : '-'}{diffPercentage}%
+        </small>
       </div>
     </div>
   );

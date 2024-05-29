@@ -1,6 +1,7 @@
 import React from 'react';
 import './FastPayments.css'
 import Badge from 'components/ui/Badge'
+import { BADGE_DATAS } from 'test/model';
 
 function FastPayments(props) {
   return (
@@ -15,8 +16,9 @@ function FastPayments(props) {
           <span className="material-icons-sharp">add</span>
         </div>
 
+        {BADGE_DATAS.map(badge => <Badge key={badge.title} {...badge} />)
 
-        <Badge />
+        }
 
 
 

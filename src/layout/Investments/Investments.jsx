@@ -2,13 +2,11 @@ import React from 'react';
 import './Investments.css'
 import Investment from 'components/ui/Investment';
 import { NavLink } from 'react-router-dom';
+import { INVESTMENT_DATAS } from 'test/model';
 
 function Investments(props) {
 
-  const investmentData = [
-    { title: "Tesla" },
-    { title: "Meta" }
-  ]
+
   return (
     <div className="investments">
 
@@ -18,8 +16,8 @@ function Investments(props) {
       </div>
 
       {
-        investmentData.map(investment => (
-          <Investment key={ investment.title} title={investment.title}></Investment>
+        INVESTMENT_DATAS.map(investment => (
+          <Investment key={investment.title} {...investment} />
 
         ))
       }
