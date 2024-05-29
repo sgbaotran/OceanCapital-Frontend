@@ -5,11 +5,11 @@ import Transaction from 'components/ui/Transaction';
 import './RecentTransactions.css'
 function RecentTransactions() {
   return (
-    <div class="recent-transactions">
+    <div className="recent-transactions">
 
-      <div class="header">
+      <div className="header">
         <h2>Recent Transaction</h2>
-        <NavLink to="/transaction">more<span class="material-icons-sharp">chevron_right</span></NavLink>
+        <NavLink to="/transaction">more<span className="material-icons-sharp">chevron_right</span></NavLink>
       </div>
 
       <Transaction></Transaction>

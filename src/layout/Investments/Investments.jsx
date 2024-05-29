@@ -7,7 +7,7 @@ function Investments(props) {
 
   const investmentData = [
     { title: "Tesla" },
-    { title: "Tesla" }
+    { title: "Meta" }
   ]
   return (
     <div className="investments">
@@ -19,7 +19,7 @@ function Investments(props) {
 
       {
         investmentData.map(investment => (
-          <Investment title={investment.title}></Investment>
+          <Investment key={ investment.title} title={investment.title}></Investment>
 
         ))
       }

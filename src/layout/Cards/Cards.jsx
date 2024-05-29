@@ -7,11 +7,11 @@ import NewCardButton from 'components/ui/NewCardButton';
 
 function Cards() {
   // Sample data for cards
-  const cardDatas = [
-    { bankName: "TD", cardNumber: "4124826634561234", balance: 1000, cardHolder: "Gia Bao Tran", expiryDate: "08/25", cvv: 111 },
-    { bankName: "CIBC", cardNumber: "4124826634561234", balance: 1000, cardHolder: "Gia Bao Tran", expiryDate: "08/25", cvv: 111 },
+  const [cardDatas, setCardDatas] = useState([
+    { bankName: "TD", cardNumber: "4124826634561234", balance: 1000, cardHolder: "Gia Bao Tran", expiryDate: "08/25", cvv: "111" },
+    { bankName: "CIBC", cardNumber: "4124826634561234", balance: 1000, cardHolder: "Gia Bao Tran", expiryDate: "08/25", cvv: "111" },
     // { bankName: "BMO", cardNumber: "4124826634561234", balance: 1000, cardHolder: "Gia Bao Tran", expiryDate: "08/25", cvv: 111 },
-  ];
+  ]);
 
   // State to control whether the new card modal is shown
   const [inNewCardMode, setInNewCardMode] = useState(false);
@@ -39,10 +39,20 @@ function Cards() {
     newCardRef.current.close();
   }
 
+
+  function addNewCard({ cardNumber, cardHolder, expiryDate, cvv }) {
+    setCardDatas(datas => {
+      datas.push({ cardNumber, cardHolder, expiryDate, cvv, balance: 9999, bankName: "TD" })
+      console.log(datas)
+      return datas
+    })
+  }
+
+
   return (
     <>
       {/* Modal for adding a new card */}
-      <NewCardModal handleOnClose={closeNewCardModal} ref={newCardRef} />
+      <NewCardModal handleAddCard={addNewCard} handleOnClose={closeNewCardModal} ref={newCardRef} />
 
       {/* Container that holds all card components */}
       <div className='cards'>

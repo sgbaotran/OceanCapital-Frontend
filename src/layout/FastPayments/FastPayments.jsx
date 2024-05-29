@@ -5,14 +5,14 @@ import Badge from 'components/ui/Badge'
 function FastPayments(props) {
   return (
 
-    <div class="fast-payment">
+    <div className="fast-payment">
 
       <h2>Fast Payment</h2>
 
-      <div class="badges">
+      <div className="badges">
 
-        <div class="badge">
-          <span class="material-icons-sharp">add</span>
+        <div className="badge">
+          <span className="material-icons-sharp">add</span>
         </div>
 
 
