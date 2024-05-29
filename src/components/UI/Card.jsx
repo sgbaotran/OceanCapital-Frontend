@@ -31,10 +31,10 @@ function Card({ bankName, cardNumber, balance, cardHolder, expiryDate, cvv }) {
     <div className="card">
       <div className="top">
         <div className="left">
-          <img src={require("assets/images/BTC.png")} alt="something" />
+          <img src={require("assets/images/BTC.png")} alt="bank logo" />
           <h2><strong>{bankName}</strong></h2>
         </div>
-        <img src={require("assets/images/visa.png")} alt="something" className="right" />
+        <img src={require("assets/images/visa.png")} alt="provider" className="right" />
       </div>
 
       <div className="middle">
@@ -44,7 +44,7 @@ function Card({ bankName, cardNumber, balance, cardHolder, expiryDate, cvv }) {
         </div>
 
         <div className="chip">
-          <img src={require("assets/images/card chip.png")} alt="something" className="chip" />
+          <img src={require("assets/images/card chip.png")} alt="chip" className="chip" />
         </div>
       </div>
 

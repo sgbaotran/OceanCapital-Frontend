@@ -1,4 +1,5 @@
 :root {
+  --color-shadow:rgba(0, 0, 0, 0.3);
   --color-white: #ffffff !important;
   --color-light: #f0eff5;
   --color-gray-light: #86848c;
@@ -22,6 +23,7 @@
 }
 
 .dark-theme {
+  --color-shadow:rgba(0, 0, 0, 0.3);
   --color-white: #131316;
   --color-light: #23232a;
   --color-dark: #ddd;

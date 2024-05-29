@@ -5,16 +5,19 @@ import MonthlyReports from 'layout/MonthlyReports/MonthlyReports';
 import Chart from 'components/ui/Chart';
 import Investments from 'layout/Investments/Investments';
 import RecentTransactions from 'layout/RecentTransactions/RecentTransactions';
+
 import "./styles/Dashboard.css"
 
 import FastPayments from 'layout/FastPayments/FastPayments';
-import NewCardModal from 'components/form/NewCardModal';
 
 
 function Dashboard() {
 
+
+
   return (
     <>
+
 
       <section className="middle">
 
@@ -44,8 +47,10 @@ function Dashboard() {
 
         <RecentTransactions></RecentTransactions>
 
-        <NewCardModal></NewCardModal>
       </section >
+
+
+
 
     </>
 

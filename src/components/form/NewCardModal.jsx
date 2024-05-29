@@ -1,10 +1,12 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import './NewCardModal.css'
-function NewCardModal() {
+
+const NewCardModal = forwardRef(function NewCardModal({handleOnClose }, ref) {
+  
   return (
 
 
-    <dialog className='new-card-modal'open>
+    <dialog ref={ref} onClose={handleOnClose} className='new-card-modal' >
 
       <form class="card-form">
         <h2>Add New Card</h2>
@@ -28,10 +30,10 @@ function NewCardModal() {
         </div>
         <button type="submit">Add Card</button>
       </form>
-      
+
     </dialog>
 
   );
-}
+})
 
 export default NewCardModal;

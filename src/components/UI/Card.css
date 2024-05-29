@@ -1,8 +1,9 @@
 .card:hover {
-  box-shadow: none !important;
+  /* box-shadow: none !important; */
+  box-shadow: 1rem 3rem 4rem var(--color-primary-light);
 }
 
-.cards .card {
+.card {
   background: linear-gradient(#ff796f, #bd261b);
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);

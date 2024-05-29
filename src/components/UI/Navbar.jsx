@@ -3,7 +3,7 @@ export default function Navbar({onSetDarkMode}) {
     return (
         <nav>
             <div className="container">
-                <img src={require("assets/images/logo.png")} alt="something" className="logo" />
+                <img src={require("assets/images/logo.png")} alt="app logo" className="logo" />
 
                 <div className="search-bar">
                     <span className="material-icons-sharp">search</span>
@@ -17,7 +17,7 @@ export default function Navbar({onSetDarkMode}) {
                     </div>
                     <div className="profile">
                         <div className="profile-photo">
-                            <img src={require("assets/images/profile-1.jpg")} alt="something" />
+                            <img src={require("assets/images/profile-1.jpg")} alt="profile pic" />
                         </div>
                         <h5>Stephen</h5>
                         <span className="material-icons-sharp">expand_more</span>

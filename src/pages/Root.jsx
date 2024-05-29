@@ -5,6 +5,7 @@ import { Outlet } from 'react-router-dom';
 import './styles/Root.css'
 
 
+
 function RootLayout() {
 
   // ==================== HANLDING DARKMODE ==================== //
@@ -24,11 +25,14 @@ function RootLayout() {
     setDarkMode(darkMode => !darkMode)
   }
 
+
   return (<>
+
 
     <Navbar onSetDarkMode={handleSetDarkMode} />
 
     <main>
+
 
       <Sidebar />
 
