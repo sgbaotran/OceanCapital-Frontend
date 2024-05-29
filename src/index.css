@@ -1,5 +1,5 @@
 :root {
-  --color-shadow:rgba(0, 0, 0, 0.3);
+  --color-shadow: rgba(0, 0, 0, 0.3);
   --color-white: #ffffff !important;
   --color-light: #f0eff5;
   --color-gray-light: #86848c;
@@ -20,10 +20,23 @@
   --card-border-radius: 1.6rem;
   --border-radius-1: 1rem;
   --border-radius-2: 6px;
+
+  /* CARD COLORS */
+
+  --color-card-warm-red: linear-gradient(90deg, #ff796f, #bd261b);
+  --color-card-cool-purple: linear-gradient(90deg,#7f7191, #27282f);
+  --color-card-dark-purple: linear-gradient(90deg, #5d70ff, #5719c2);
+  --color-card-sunset-glow: linear-gradient(90deg, #cc6e5d, #d68f84);
+  --color-card-ocean-blue: linear-gradient(90deg, #679bce, #85bbdb);
+  --color-card-mint: linear-gradient(90deg, #a3d270, #77b588);
+  --color-card-lavender: linear-gradient(90deg, #b79dd1, #697ebc);
+  --color-card-peach: linear-gradient(90deg, #caa37f, #da978e);
+  --color-card-lemon-lime: linear-gradient(90deg, #c0c28a, #b5bf4a);
+  --color-card-tropical-sunset: linear-gradient(90deg, #d18cb6, #7b8aae);
 }
 
 .dark-theme {
-  --color-shadow:rgba(0, 0, 0, 0.3);
+  --color-shadow: rgba(0, 0, 0, 0.3);
   --color-white: #131316;
   --color-light: #23232a;
   --color-dark: #ddd;

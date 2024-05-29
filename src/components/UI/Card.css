@@ -15,16 +15,7 @@
   box-shadow: 0 2rem 3rem var(--color-primary-light);
   transition: all 300ms ease;
 }
-
-.cards .card:nth-child(2) {
-  background: linear-gradient(#5d70ff, #5719c2);
-
-}
-
-.cards .card:nth-child(3) {
-  background: linear-gradient(#5d70ff, #5719c2);
-}
-
+w
 .card .top {
   display: flex;
   justify-content: space-between;
