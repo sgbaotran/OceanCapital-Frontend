@@ -4,7 +4,6 @@
 }
 
 .card {
-  background: linear-gradient(#ff796f, #bd261b);
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);
   color: white;
@@ -15,7 +14,7 @@
   box-shadow: 0 2rem 3rem var(--color-primary-light);
   transition: all 300ms ease;
 }
-w
+
 .card .top {
   display: flex;
   justify-content: space-between;

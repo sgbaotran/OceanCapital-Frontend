@@ -4,11 +4,11 @@ import Card from 'components/ui/Card';
 import NewCardModal from 'components/form/NewCardModal';
 import { useEffect, useRef, useState } from 'react';
 import NewCardButton from 'components/ui/NewCardButton';
-import { CARD_TEST_DATAS } from 'test/model';
+
 
 function Cards() {
   // Sample data for cards
-  const [cardDatas, setCardDatas] = useState(CARD_TEST_DATAS);
+  const [cardDatas, setCardDatas] = useState([]);
 
   // State to control whether the new card modal is shown
   const [inNewCardMode, setInNewCardMode] = useState(false);
@@ -37,10 +37,9 @@ function Cards() {
   }
 
 
-  function addNewCard({ cardNumber, cardHolder, expiryDate, cvv }) {
+  function addNewCard(newCard) {
     setCardDatas(datas => {
-      datas.push({ cardNumber, cardHolder, expiryDate, cvv, balance: 9999, bankName: "TD" })
-      console.log(datas)
+      datas.push(newCard)
       return datas
     })
   }

@@ -40,14 +40,14 @@ export default function Sidebar() {
                     <h4>Analytic</h4>
                 </NavLink>
             </div>
-
+{/* 
             <div className="updates">
-                {/* Section for updates */}
+
                 <span className="material-icons-sharp">update</span>
                 <h4>Updates Available</h4>
                 <small>Security Updates</small>
                 <small>General Updates</small>
-            </div>
+            </div> */}
         </aside>
     );
 }

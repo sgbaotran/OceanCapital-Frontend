@@ -5,7 +5,7 @@
   --color-gray-light: #86848c;
   --color-gray-dark: #56555e;
   --color-dark: #27282f;
-  --color-primary: rgb(71, 7, 234);
+  --color-primary: rgb(0, 119, 255);
   --color-success: rgb(34, 202, 75);
   --color-danger: rgb(255, 67, 54);
   --color-warning: rgb(234, 181, 7);
@@ -23,8 +23,8 @@
 
   /* CARD COLORS */
 
-  --color-card-warm-red: linear-gradient(90deg, #ff796f, #bd261b);
-  --color-card-cool-purple: linear-gradient(90deg,#7f7191, #27282f);
+  --color-card-warm-red: linear-gradient(90deg, #bd261b, #ff796f);
+  --color-card-cool-purple: linear-gradient(90deg, #27282f, #7f7191);
   --color-card-dark-purple: linear-gradient(90deg, #5d70ff, #5719c2);
   --color-card-sunset-glow: linear-gradient(90deg, #cc6e5d, #d68f84);
   --color-card-ocean-blue: linear-gradient(90deg, #679bce, #85bbdb);
@@ -165,92 +165,42 @@ small {
   background: var(--color-purple-light);
 }
 
-
-
-/*==================== MEDIA QUERIES FOR TABLETS ====================*/
-
-@media screen and (max-width:1024px) {
-
-
-  main aside {
-    position: fixed !important;
-    top: 0 !important;
-    left: -100% !important;
-    z-index: 3 !important;
-    background: var(--color-white) !important;
-    width: 22rem !important;
-    height: 100vh !important;
-    box-shadow: 2rem 0 2rem var(--color-primary-light) !important;
-    display: none !important;
-    animation: showSidebar 300ms ease forwards !important;
-  }
-
-  @keyframes showSidebar {
-
-    to {
-      left: 0
-    }
-  }
-
-  main aside button#close-btn {
-    display: inline-block !important;
-    width: 3rem !important;
-    height: 3rem !important;
-    position: absolute !important;
-    top: 1rem !important;
-    right: 1rem !important;
-    z-index: 4 !important;
-    background: transparent !important;
-    color: var(--color-dark) !important;
-  }
-
-  button:hover {
-    cursor: pointer !important;
-  }
-
-  main aside .sidebar {
-    margin-top: 4rem !important;
-  }
-
-  main aside .updates {
-    display: none !important;
-  }
-
-  main section.middle .cards {
-    grid-template-columns: 1fr 1fr !important;
-  }
-
-  main canvas {
-    margin: 3rem 0 1rem !important;
-  }
-
-  main section.right .recent-transactions {
-    margin-top: 3rem !important;
-  }
-
+.bg-card-warm-red {
+  background: var(--color-card-warm-red);
 }
 
-/*==================== MEDIA QUERIES FOR PHONES ====================*/
+.bg-card-cool-purple {
+  background: var(--color-card-cool-purple);
+}
 
-@media screen and (max-width:600px) {
-  nav .profile-area {
-    gap: 2.6rem !important;
-  }
+.bg-card-dark-purple {
+  background: var(--color-card-dark-purple);
+}
 
-  nav .profile-area h5,
-  nav .profile span {
-    display: none !important;
-  }
+.bg-card-sunset-glow {
+  background: var(--color-card-sunset-glow);
+}
 
-  main section.middle .cards {
-    grid-template-columns: 1fr
-  }
+.bg-card-ocean-blue {
+  background: var(--color-card-ocean-blue);
+}
 
-  main section.middle .fast-payment {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    margin-top: 3rem !important;
-    gap: 1.4rem
-  }
+.bg-card-mint {
+  background: var(--color-card-mint);
+}
 
+.bg-card-lavender {
+  background: var(--color-card-lavender);
+}
+
+.bg-card-peach {
+  background: var(--color-card-peach);
+}
+
+.bg-card-lemon-lime {
+  background: var(--color-card-lemon-lime);
+}
+
+.bg-card-tropical-sunset {
+  background: var(--color-card-tropical-sunset);
 }

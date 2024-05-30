@@ -36,5 +36,18 @@ export const INVESTMENT_DATAS = [
 ]
 
 export const TRANSACTION_DATAS = [
-  { title:"Walmart", date:"11.11.2024", cardType:"Debit", cardNumber:"1232", amount:"24" }
+  { title: "Walmart", date: "11.11.2024", cardType: "Debit", cardNumber: "1232", amount: "24" }
 ]
+
+export const CARD_COLORS = [
+  'warm-red',
+  'cool-purple',
+  'dark-purple',
+  'sunset-glow',
+  'ocean-blue',
+  'mint',
+  'lavender',
+  'peach',
+  'lemon-lime',
+  'tropical-sunset'
+];
