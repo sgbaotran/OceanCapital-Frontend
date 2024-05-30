@@ -32,11 +32,12 @@ function Card(card) {
       <div className="top">
         <div className="left">
           {/* Bank logo */}
-          <img src={require("assets/images/BTC.png")} alt="bank logo" />
+          <img src={require("assets/images/BTC.png")} alt="TD" />
           <h2><strong>{card.name}</strong></h2>
+
         </div>
         {/* Card provider logo */}
-        <img src={require("assets/images/visa.png")} alt="provider" className="right" />
+        <img src={require(`assets/images/${card.provider}.png`)} alt="provider" className="right" />
       </div>
 
       <div className="middle">

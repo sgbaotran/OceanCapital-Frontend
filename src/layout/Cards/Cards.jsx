@@ -3,7 +3,7 @@ import './Cards.css';
 import Card from 'components/ui/Card';
 import NewCardModal from 'components/form/NewCardModal';
 import { useEffect, useRef, useState } from 'react';
-import NewCardButton from 'components/ui/NewCardButton';
+import NewCardButton from 'components/button/NewCardButton';
 
 
 function Cards() {

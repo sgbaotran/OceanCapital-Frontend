@@ -1,7 +1,7 @@
 import React from 'react';
 import './Transaction.css'
 
-function Transaction({ title, date, cardType, cardNumber, amount }) {
+function Transaction(transaction) {
   return (
     <div className="transaction">
       <div className="service">
@@ -9,8 +9,8 @@ function Transaction({ title, date, cardType, cardNumber, amount }) {
           <span className='material-icons-sharp'>shopping_bag</span>
         </div>
         <div className="details">
-          <h4>{title}</h4>
-          <p>{date}</p>
+          <h4>{transaction.title}</h4>
+          <p>{transaction.date}</p>
         </div>
       </div>
 
@@ -19,11 +19,11 @@ function Transaction({ title, date, cardType, cardNumber, amount }) {
           <img src={require("assets/images/visa.png")} alt="" />
         </div>
         <div className="details">
-          <p>*{cardNumber}</p>
-          <small className="text-muted">{cardType} Card</small>
+          <p>*{transaction.fromAccount.slice(-4)}</p>
+          {/* <small className="text-muted">{cardType} Card</small> */}
         </div>
       </div>
-      <h4>${amount}</h4>
+      <h4>${transaction.amount}</h4>
     </div>
   );
 }
