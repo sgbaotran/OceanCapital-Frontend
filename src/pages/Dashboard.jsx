@@ -1,14 +1,14 @@
 
-import Cards from 'layout/Cards/Cards';
+import Cards from 'container/Cards/Cards';
 import React from 'react';
-import MonthlyReports from 'layout/MonthlyReports/MonthlyReports';
+import MonthlyReports from 'container/MonthlyReports/MonthlyReports';
 import Chart from 'components/ui/Chart';
-import Investments from 'layout/Investments/Investments';
-import RecentTransactions from 'layout/RecentTransactions/RecentTransactions';
+import Investments from 'container/Investments/Investments';
+import RecentTransactions from 'container/RecentTransactions/RecentTransactions';
 
 import "./styles/Dashboard.css"
 
-import FastPayments from 'layout/FastPayments/FastPayments';
+import FastPayments from 'container/FastPayments/FastPayments';
 
 
 function Dashboard() {
