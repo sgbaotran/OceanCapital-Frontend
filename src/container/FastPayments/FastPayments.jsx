@@ -1,12 +1,12 @@
 import React from 'react';
 import './FastPayments.css'
-import Badge from 'components/ui/Badge'
-import { BADGE_DATAS } from 'test/model';
+import Badge from 'components/other/Badge'
+import { BADGE_DATAS } from 'sample-data/model';
 
-function FastPayments(props) {
+function FastPayments() {
   return (
 
-    <div className="fast-payment">
+    <div className="fast-payment-container">
 
       <h2>Fast Payment</h2>
 

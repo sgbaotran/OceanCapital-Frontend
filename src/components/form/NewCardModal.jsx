@@ -1,6 +1,6 @@
 import { forwardRef, useRef, useState, useEffect } from 'react';
 import './NewCardModal.css';
-import { CARD_COLORS } from 'test/model';
+import { CARD_COLORS } from 'sample-data/model';
 import Card from 'models/CardModel';
 
 const NewCardModal = forwardRef(function NewCardModal({ handleOnClose, handleAddCard }, ref) {

@@ -2,7 +2,7 @@ import React from 'react';
 import './Chart.css'
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { CHART_DATAS } from 'test/model';
+import { CHART_DATAS } from 'sample-data/model';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 

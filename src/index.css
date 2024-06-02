@@ -36,7 +36,6 @@
 }
 
 .dark-theme {
-  --color-shadow: rgba(0, 0, 0, 0.3);
   --color-white: #131316;
   --color-light: #23232a;
   --color-dark: #ddd;

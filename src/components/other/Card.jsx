@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
+import { formatCardNumber, hideCardNumber,calculateBalance } from 'utils/CardUtils';
 import './Card.css'
 
-// Function to format the card number by grouping digits in sets of 4
-function formatCardNumber(str) {
-  return str.match(/.{1,4}/g).join(' ');
-}
 
-// Function to mask the card number, showing only the last 4 digits
-function hideCardNumber(str) {
-  return "**** **** **** " + str.slice(-4);
-}
 
 function Card(card) {
   // State to toggle the display of the full card number

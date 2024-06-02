@@ -1,0 +1,29 @@
+.transaction-form {
+  margin-bottom: 1rem;
+}
+
+.transaction-form input,
+.transaction-form select {
+  width: 100%;
+  padding: .75rem;
+  margin-bottom: .5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 1.2rem;
+  transition: border-color 0.3s;
+}
+
+.transaction-form input:focus,
+.transaction-form select:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  outline: none;
+}
+
+.transaction-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+

@@ -1,0 +1,33 @@
+/* Centering the dialog */
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  background: var(#23232a);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  border: none;
+  position: relative;
+  margin: auto;
+}
+
+.modal-header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-header .close-button {
+  padding: 4.5px;
+  width: 2rem;
+  height: 2rem;
+  background-color: #55555555;
+  opacity: .6;
+  border-radius: 50%;
+}
+
+

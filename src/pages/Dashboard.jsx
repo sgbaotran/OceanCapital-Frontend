@@ -2,9 +2,9 @@
 import Cards from 'container/Cards/Cards';
 import React from 'react';
 import MonthlyReports from 'container/MonthlyReports/MonthlyReports';
-import Chart from 'components/ui/Chart';
+import Chart from 'components/other/Chart';
 import Investments from 'container/Investments/Investments';
-import RecentTransactions from 'container/RecentTransactions/RecentTransactions';
+import Transactions from 'container/Transactions/Transactions';
 
 import "./styles/Dashboard.css"
 
@@ -45,7 +45,7 @@ function Dashboard() {
 
         <Investments></Investments>
 
-        <RecentTransactions></RecentTransactions>
+        <Transactions></Transactions>
 
       </section >
 

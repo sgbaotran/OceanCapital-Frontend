@@ -1,5 +1,5 @@
-import Navbar from 'components/ui/Navbar';
-import Sidebar from 'components/ui/Sidebar';
+import Navbar from 'components/other/Navbar';
+import Sidebar from 'components/other/Sidebar';
 import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import './styles/Root.css'

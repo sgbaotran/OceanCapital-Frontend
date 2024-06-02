@@ -1,5 +1,5 @@
 /* ======================== MONTHLY REPORT ======================== */
-.monthly-report {
+.monthly-report-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
@@ -7,7 +7,7 @@
   margin-top: 2rem;
 }
 
-.monthly-report h1 {
+.monthly-report-container h1 {
   font-weight: 700;
   font-size: 1.8rem;
 }

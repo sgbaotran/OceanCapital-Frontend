@@ -1,12 +1,12 @@
 /* ======================== FAST PAYMENT ======================== */
-main .fast-payment {
+.fast-payment-container {
   margin-top: 2rem;
   display: flex;
   align-self: center;
   gap: 2rem;
 }
 
-main .fast-payment .badge:first-child span {
+.fast-payment-container .badge:first-child span {
   display: flex;
   align-self: center;
   justify-content: center;
@@ -15,7 +15,7 @@ main .fast-payment .badge:first-child span {
 }
 
 @media screen and (max-width:600px) {
-  .fast-payment {
+  .fast-payment-container {
     flex-direction: column !important;
     align-items: flex-start !important;
     margin-top: 3rem !important;

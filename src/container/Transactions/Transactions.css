@@ -1,20 +1,20 @@
 /*==================== RECENT TRANSACTION ====================*/
 
-.recent-transactions {
+.recent-transactions-container {
   margin-top: 2rem;
 }
 
-.recent-transactions img {
+.recent-transactions-container img {
   width: 2.2rem;
 }
 
-.recent-transactions .header {
+.recent-transactions-container .header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
 
-.recent-transactions .header a {
+.recent-transactions-container .header a {
   display: flex;
   align-items: center;
   color: var(--color-primary);
@@ -22,7 +22,7 @@
 
 
 @media screen and (max-width:1024px) {
-  .recent-transactions {
+  .recent-transactions-container {
     margin-top: 3rem !important;
   }
 }
