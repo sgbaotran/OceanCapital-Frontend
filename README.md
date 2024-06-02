@@ -1,4 +1,4 @@
-# OnesCapital - Front End
+# OceanCapital - Front End
 
 OnesCapital is an application developed by Gia Bao Tran in order to provide an easier way that people can manage their finances more conveniently and robust. Features such as Balance tracking, Expense logs, View currency, and other sets of useful tools one can leverage to successfully manage their finances $$$
 
