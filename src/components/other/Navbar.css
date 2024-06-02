@@ -15,7 +15,7 @@ nav .container {
 }
 
 nav img.logo {
-  width: 7rem;
+  width: 4rem;
 }
 
 nav .search-bar {
@@ -39,6 +39,15 @@ nav .search-bar input[type="search"] {
 
 nav .search-bar input[type="search"]::placeholder {
   color: var(--color-gray-dark);
+}
+nav .company-logo{
+  display: flex;
+}
+nav .company-logo:hover{
+cursor: pointer;
+}
+nav .company-logo h2{
+  margin: auto
 }
 
 nav .profile-area {

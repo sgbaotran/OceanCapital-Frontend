@@ -5,7 +5,10 @@ export default function Navbar({ onSetDarkMode }) {
         <nav>
             <div className="container">
                 {/* Logo image */}
-                <img src={require("assets/images/logo.png")} alt="app logo" className="logo" />
+                <div className='company-logo'>
+                    <img src={require("assets/images/logo.png")} alt="app logo" className="logo" />
+                    <h2>OCEAN CAPITAL</h2>
+                </div>
 
                 {/* Search bar */}
                 <div className="search-bar">
