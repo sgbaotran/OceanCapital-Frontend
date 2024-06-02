@@ -66,7 +66,7 @@ function NewTransaction({ closeModal }) {
         
       </div>
 
-      <button type='button' onClick={handleAddTransaction} className="form-button">Add Transaction</button>
+      <button type='button' onClick={handleAddTransaction} className="form-button disabled">Add Transaction</button>
 
     </form>
 

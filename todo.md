@@ -1,4 +1,4 @@
-# WealthSoldier - Front End - To Do
+# OnesCapital - Front End - To Do
 
 
 ## TO FIX
