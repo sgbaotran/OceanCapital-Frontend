@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import './NewCard.css'
 import './Form.css'
 import BankingContext from 'store/banking-context';
@@ -6,6 +6,10 @@ import Card from 'models/CardModel';
 import { CARD_COLORS } from 'sample-data/model';
 
 function NewCard({ closeModal }) {
+
+  useEffect(() => {
+    setTimeout(() => { console.log("TIMER START") },1000)
+  }, [])
 
   const { addCard } = useContext(BankingContext)
 

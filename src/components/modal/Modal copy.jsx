@@ -1,21 +1,17 @@
-import React, { forwardRef, useRef, useImperativeHandle } from 'react';
+import React, { forwardRef, useRef, useImperativeHandle, useState } from 'react';
 import './Modal.css';
 
-const Modal = forwardRef(function Modal({ content, children }, ref) {
+function TestModal({ ref, open, content, children }) {
   const dialog = useRef();
 
-  useImperativeHandle(ref, () => ({
-    open: () => showDialog(),
-    close: () => closeDialog(),
-  }));
+  useEffect(() => {
+    if (open) {
+      dialog.current.showModal();
+    } else {
+      dialog.current.close();
+    }
+  }, [open]);
 
-  function showDialog() {
-    dialog.current.showModal();
-  }
-
-  function closeDialog() {
-    dialog.current.close();
-  }
 
   return (
     <dialog ref={dialog} className='modal'>
@@ -33,4 +29,4 @@ const Modal = forwardRef(function Modal({ content, children }, ref) {
   );
 });
 
-export default Modal;
+export default TestModal;

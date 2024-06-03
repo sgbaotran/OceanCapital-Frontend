@@ -19,8 +19,6 @@ function NewTransaction({ closeModal }) {
     if (transactionAccount.current) transactionAccount.current.value = '';
   }
 
-
-
   function handleAddTransaction() {
     const transaction = new Transaction(
       transactionAmount.current.value,
@@ -32,7 +30,6 @@ function NewTransaction({ closeModal }) {
     resetInputs()
     closeModal();
   }
-
 
   return (
 
@@ -59,11 +56,11 @@ function NewTransaction({ closeModal }) {
           <label htmlFor="from-account">From account</label>
           <select ref={transactionAccount} id="from-account" name="from-account" required>
             {cards.map(card => (
-              <option value={card.number}>*{card.number.slice(-4)}</option>
+              <option key={card.number} value={card.number}>*{card.number.slice(-4)}</option>
             ))}
           </select>
         </div>
-        
+
       </div>
 
       <button type='button' onClick={handleAddTransaction} className="form-button disabled">Add Transaction</button>
