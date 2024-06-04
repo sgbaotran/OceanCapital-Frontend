@@ -1,36 +1,29 @@
-import React, { forwardRef, useRef, useImperativeHandle } from 'react';
+import React, { useRef, useEffect } from 'react';
 import './Modal.css';
 
-const Modal = forwardRef(function Modal({ content, children }, ref) {
+function Modal({ open, onClose, content, children }) {
   const dialog = useRef();
 
-  useImperativeHandle(ref, () => ({
-    open: () => showDialog(),
-    close: () => closeDialog(),
-  }));
+  useEffect(() => {
+    if (open) {
+      dialog.current.showModal();
+    } else {
+      dialog.current.close();
+    }
+  }, [open]);
 
-  function showDialog() {
-    dialog.current.showModal();
-  }
-
-  function closeDialog() {
-    dialog.current.close();
-  }
 
   return (
     <dialog ref={dialog} className='modal'>
       <div className='modal-header'>
         <h2>Add New {content}</h2>
-        <button type="button" onClick={closeDialog} className="close-button">X</button>
+        <button type="button" onClick={onClose} className="close-button">X</button>
       </div>
       <div className="modal-content">
-
-        {React.Children.map(children, (child) => {
-          return React.cloneElement(child, { closeModal: closeDialog });
-        })}
+        {open ? children : null}
       </div>
     </dialog>
-  );
-});
+  )
+};
 
 export default Modal;

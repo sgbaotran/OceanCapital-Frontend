@@ -1,8 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Cards.css';
 import Card from 'components/other/Card';
-
-import { useRef } from 'react';
 import NewCardButton from 'components/button/NewCardButton';
 import BankingContext from 'store/banking-context';
 import Modal from 'components/modal/Modal';
@@ -12,34 +10,52 @@ import NewCard from 'components/form/NewCard';
 
 function Cards() {
 
-  const modal = useRef()
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
 
   const { cards } = useContext(BankingContext)
 
-  function openModal() {
-    modal.current.open()
+  // METHOD 1
+  // const modal = useRef()
+  // function openModal() {
+  //   modal.current.open()
+  // }
+  // function closeModal() {
+  //   modal.current.close()
+  // }
+
+  function handleAddCard() {
+    setIsModalOpen(true)
+  }
+
+  function handleCloseModal() {
+    setIsModalOpen(false)
   }
 
   return (
     <>
 
+      {/* METHOD 1 */}
+      {/* <DeprecatedModal ref={modal} content="Card">
+        < DeprecatedNewCard onClose={closeModal}></ DeprecatedNewCard>
+      </DeprecatedModal> */}
+
       {/* Modal for adding a new card */}
-      <Modal ref={modal} content="Card">
-        < NewCard></ NewCard>
+      <Modal content="Card" onClose={handleCloseModal} open={isModalOpen}>
+        <NewCard onClose={handleCloseModal} />
       </Modal>
 
-      {/* Container that holds all card components */}
+
       <div className='cards-container'>
-        {/* Map over card data to render individual Card components */}
         {cards.map(card => (
           <Card
-            key={card.number} // Adding a key to help React identify each element
+            key={card.number}
             {...card}
           />
         ))}
 
         {/* Button that triggers the NewCardModal to show up, styled to look like a card */}
-        <NewCardButton handleOnOpen={openModal} />
+        <NewCardButton handleOnOpen={handleAddCard} />
       </div>
     </>
   );

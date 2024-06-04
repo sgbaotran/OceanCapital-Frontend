@@ -29,5 +29,8 @@
   opacity: .6;
   border-radius: 50%;
 }
+.modal-header .close-button:hover {
+ cursor: pointer;
+}
 
 

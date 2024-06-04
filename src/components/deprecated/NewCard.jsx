@@ -1,15 +1,11 @@
-import React, { useState, useRef, useContext, useEffect } from 'react';
-import './NewCard.css'
-import './Form.css'
+import React, { useState, useRef, useContext } from 'react';
+import 'components/form/Form.css'
+import 'components/form/NewCard.css'
 import BankingContext from 'store/banking-context';
 import Card from 'models/CardModel';
 import { CARD_COLORS } from 'sample-data/model';
 
-function NewCard({ onClose }) {
-
-  useEffect(() => {
-    setTimeout(() => { console.log("TIMER START") }, 2000)
-  }, [onClose])
+function DeprecatedNewCard({ closeModal }) {
 
   const { addCard } = useContext(BankingContext)
 
@@ -48,8 +44,8 @@ function NewCard({ onClose }) {
     );
 
     addCard(card)
+    closeModal()
     resetInputs()
-    onClose()
   }
 
   return (
@@ -114,4 +110,4 @@ function NewCard({ onClose }) {
   );
 }
 
-export default NewCard;
+export default DeprecatedNewCard;

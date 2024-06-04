@@ -1,11 +1,12 @@
 import React, { useRef, useContext } from 'react';
 import BankingContext from 'store/banking-context';
 import Transaction from 'models/TransactionModel';
-import './NewTransaction.css'
-import './Form.css'
+import 'components/form/Form.css'
+import 'components/form/NewTransaction.css'
 
 
-function NewTransaction({ onClose }) {
+
+function DeprecatedNewTransaction({ closeModal }) {
 
   const { cards, addTransaction } = useContext(BankingContext)
 
@@ -28,7 +29,7 @@ function NewTransaction({ onClose }) {
     );
     addTransaction(transaction);
     resetInputs()
-    onClose();
+    closeModal();
   }
 
   return (
@@ -71,4 +72,4 @@ function NewTransaction({ onClose }) {
   );
 }
 
-export default NewTransaction;
+export default DeprecatedNewTransaction;
