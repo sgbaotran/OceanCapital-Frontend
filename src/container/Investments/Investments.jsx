@@ -4,7 +4,7 @@ import Investment from 'components/other/Investment';
 import { NavLink } from 'react-router-dom';
 import { INVESTMENT_DATAS } from 'sample-data/model';
 
-function Investments(props) {
+function InvestmentContainer(props) {
 
 
   return (
@@ -27,4 +27,4 @@ function Investments(props) {
   );
 }
 
-export default Investments;
+export default InvestmentContainer;

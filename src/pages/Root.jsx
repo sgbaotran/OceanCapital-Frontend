@@ -33,7 +33,6 @@ function RootLayout() {
 
     <main>
 
-
       <Sidebar />
 
       <Outlet></Outlet>

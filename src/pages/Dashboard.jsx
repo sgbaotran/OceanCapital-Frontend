@@ -1,14 +1,14 @@
 
-import Cards from 'container/Cards/Cards';
+import CardContainer from 'container/Cards/Cards';
 import React from 'react';
-import MonthlyReports from 'container/MonthlyReports/MonthlyReports';
+import MonthlyReportContainer from 'container/MonthlyReports/MonthlyReports';
 import Chart from 'components/other/Chart';
-import Investments from 'container/Investments/Investments';
-import Transactions from 'container/Transactions/Transactions';
+import InvestmentContainer from 'container/Investments/Investments';
+import TransactionContainer from 'container/Transactions/Transactions';
 
 import "./styles/Dashboard.css"
 
-import FastPayments from 'container/FastPayments/FastPayments';
+import GroupContainer from 'container/Groups/Groups';
 
 
 function Dashboard() {
@@ -28,11 +28,11 @@ function Dashboard() {
         </div>
 
 
-        <Cards />
+        <CardContainer />
 
-        <MonthlyReports />
+        <MonthlyReportContainer/>
 
-        <FastPayments />
+        <GroupContainer />
 
         <Chart />
 
@@ -43,9 +43,9 @@ function Dashboard() {
 
       <section className="right">
 
-        <Investments></Investments>
+        <InvestmentContainer></InvestmentContainer>
 
-        <Transactions></Transactions>
+        <TransactionContainer></TransactionContainer>
 
       </section >
 

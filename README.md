@@ -17,7 +17,16 @@ Keep in mind that this is just the front end of the project, check my repos to v
 This project is written in MERN stack and utilized Docker and Jenkins for CI/CD practices (might as well use AWS for hosting 🤔)
 
 ## Project structure
-1. pages: Root is the very important component where it will serve as a fixed layout for ot 
+1. <span style="background-color: #FFFF00">pages/Root.jsx</span>: is most important as it defines the overall structure of the app, containing fixed components such as the <Navbar> and <Sidebar>. These components are always rendered, providing a consistent layout across the application. Other pages of the app will be passed and rendered as children of <Root>, ensuring they are displayed within the context of the fixed structure. Dark-mode functionality is also defined within this file.
+
+2. <span style="background-color: #FFFF00">models/[FILE].js</span>: contains classes that define important objects in the application for better maintenance and clarity. This is especially useful when upgrading to TypeScript, as it ensures that data structures are well-defined and consistent throughout the codebase.
+
+3. <span style="background-color: #FFFF00">container/[FILE].js</span>: These components serve as containers to hold sub-components. Each container component will act as a building block to layout different sections of a page. They are responsible for managing the layout and organization of their child components and handle new item creation. Example: <CardContainer> will hold many other <Card> component and is, thus, responsible for managing them including adding new <Card> functionality
+
+4. <span style="background-color: #FFFF00">pages/Root</span>:
+
+5. <span style="background-color: #FFFF00">pages/Root</span>:
+
 
 ## Shout out
 

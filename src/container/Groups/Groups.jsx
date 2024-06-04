@@ -1,9 +1,9 @@
 import React from 'react';
-import './FastPayments.css'
+import './Groups.css'
 import Badge from 'components/other/Badge'
 import { BADGE_DATAS } from 'sample-data/model';
 
-function FastPayments() {
+function GroupContainer() {
   return (
 
     <div className="fast-payment-container">
@@ -28,4 +28,4 @@ function FastPayments() {
   );
 }
 
-export default FastPayments;
+export default GroupContainer;

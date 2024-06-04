@@ -8,7 +8,7 @@ import NewCard from 'components/form/NewCard';
 
 
 
-function Cards() {
+function CardContainer() {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -61,4 +61,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default CardContainer;

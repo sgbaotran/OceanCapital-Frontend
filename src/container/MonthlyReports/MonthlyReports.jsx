@@ -4,7 +4,7 @@ import Report from 'components/other/Report';
 import { REPORT_DATAS } from 'sample-data/model';
 
 
-function MonthlyReports(props) {
+function MonthlyReportContainer(props) {
 
 
   return (
@@ -16,4 +16,4 @@ function MonthlyReports(props) {
   );
 }
 
-export default MonthlyReports;
+export default MonthlyReportContainer;

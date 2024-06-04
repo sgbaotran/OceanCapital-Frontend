@@ -9,13 +9,13 @@ import Modal from 'components/modal/Modal';
 import NewTransaction from 'components/form/NewTransaction';
 
 
-function Transactions() {
+function TransactionContainer() {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const { transactions } = useContext(BankingContext)
 
   console.log(transactions)
-  
+
   function handleAddTransaction() {
     setIsModalOpen(true)
   }
@@ -64,4 +64,4 @@ function Transactions() {
   );
 }
 
-export default Transactions;
+export default TransactionContainer;
