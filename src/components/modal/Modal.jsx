@@ -14,7 +14,7 @@ function Modal({ open, onClose, content, children }) {
 
 
   return (
-    <dialog ref={dialog} className='modal'>
+    <dialog ref={dialog} className='modal' onClose={onClose}>
       <div className='modal-header'>
         <h2>Add New {content}</h2>
         <button type="button" onClick={onClose} className="close-button">X</button>

@@ -7,14 +7,13 @@ import NewTransactionButton from 'components/button/NewTransactionButton';
 import BankingContext from 'store/banking-context';
 import Modal from 'components/modal/Modal';
 import NewTransaction from 'components/form/NewTransaction';
+import ErrorMessage from 'components/form/ErrorMessage';
 
 
 function TransactionContainer() {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const { transactions } = useContext(BankingContext)
-
-  console.log(transactions)
+  const { cards, transactions } = useContext(BankingContext)
 
   function handleAddTransaction() {
     setIsModalOpen(true)
@@ -43,7 +42,11 @@ function TransactionContainer() {
 
       {/* Modal for adding a new card */}
       <Modal content="Transaction" onClose={handleCloseModal} open={isModalOpen}>
-        <NewTransaction onClose={handleCloseModal} />
+        {
+          cards.length !== 0 ?
+            <NewTransaction onClose={handleCloseModal} /> :
+            <ErrorMessage onClose={handleCloseModal} message={"There is no fund to create transaction!"} />
+        }
       </Modal>
 
       <div className="recent-transactions-container">

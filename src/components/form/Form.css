@@ -41,6 +41,12 @@
   background-color: #0056b3;
 }
 
-.form-button .disabled {
-  background-color: #5d6a79;
+.disabled {
+  background-color: #5d6a79 !important;
+}
+
+.form-error-message {
+  color: red;
+  height: 1rem !important;
+  visibility: visible
 }

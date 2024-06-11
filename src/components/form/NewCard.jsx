@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import './NewCard.css'
 import './Form.css'
 import BankingContext from 'store/banking-context';
@@ -7,83 +7,88 @@ import { CARD_COLORS } from 'sample-data/model';
 
 function NewCard({ onClose }) {
 
-  useEffect(() => {
-    setTimeout(() => { console.log("TIMER START") }, 2000)
-  }, [onClose])
-
   const { addCard } = useContext(BankingContext)
+  const [newCard, setNewCard] = useState({
+    bank: '', number: '', balance: 0, holder: '', expiryDate: '', cvv: '', color: "warm-red", provider: 'visa',
+  })
+  const [didEdit, setDidEdit] = useState({
+    number: false, expiryDate: false, cvv: false,
+  })
 
-  const cardNumber = useRef();
-  const cardHolder = useRef();
-  const cardExpiryDate = useRef();
-  const cardCvv = useRef();
-  const cardProvider = useRef(); // Unique ref for provider select element
-  const cardBank = useRef(); // Ref for bank name
-  const [cardColor, setCardColor] = useState("warm-red");
 
-  function chooseCardColor(colorName) {
-    setCardColor(colorName);
+  function checkCardNumber(number) {
+    const cardNumberRegex = /^\d+$/;
+    return number.length !== 16 || !cardNumberRegex.test(number);
   }
 
-  function resetInputs() {
-    if (cardNumber.current) cardNumber.current.value = '';
-    if (cardHolder.current) cardHolder.current.value = '';
-    if (cardExpiryDate.current) cardExpiryDate.current.value = '';
-    if (cardCvv.current) cardCvv.current.value = '';
-    if (cardProvider.current) cardProvider.current.value = 'visa'; // Reset to default value
-    if (cardBank.current) cardBank.current.value = ''; // Reset bank name
-    setCardColor("warm-red");
+  function checkExpiryDate(date) {
+    const expiryDateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+    return !expiryDateRegex.test(date);
+  };
+
+  const isCardInvalid = didEdit.number && checkCardNumber(newCard['number'])
+
+  const isDateInvalid = didEdit.expiryDate && checkExpiryDate(newCard['expiryDate'])
+
+  function handleInputBlur(key) {
+    setDidEdit(prevEdit => ({ ...prevEdit, [key]: true }));
   }
 
-  function handleAddCard() {
-    const card = new Card(
-      cardBank.current.value,
-      cardNumber.current.value,
-      1000,
-      cardHolder.current.value,
-      '02/27',
-      cardCvv.current.value,
-      cardColor,
-      cardProvider.current.value // Correctly pass provider value
-    );
+  function handleInputChange(key, event) {
+    setNewCard(card => {
+      return { ...card, [key]: event.target.value }
+    })
+  }
 
+  function handleChooseCardColor(colorName) {
+    setNewCard(card => {
+      return { ...card, 'color': colorName }
+    })
+  }
+
+  function handleAddCard(event) {
+    event.preventDefault()
+    const card = new Card({ ...newCard });
     addCard(card)
-    resetInputs()
     onClose()
+    event.target.reset()
   }
 
   return (
 
-    <form className='card-form'>
+    <form onSubmit={handleAddCard} className='card-form'>
+
       <div className="form-group">
         <label htmlFor="bank-name">Bank Name</label>
-        <input ref={cardBank} type="text" id="bank-name" name="bank-name" required />
+        <input onChange={(event) => handleInputChange('bank', event)} type="text" id="bank-name" name="bank-name" required />
       </div>
 
       <div className="form-group">
         <label htmlFor="card-number">Card Number</label>
-        <input ref={cardNumber} type="text" id="card-number" name="card-number" maxLength={19} required />
+        <input onBlur={() => handleInputBlur('number')} onChange={(event) => handleInputChange('number', event)} type="text" id="card-number" name="card-number" maxLength={16} required />
+        {isCardInvalid && <span className='form-error-message'>Invalid Number</span>}
       </div>
 
       <div className="form-group">
         <label htmlFor="cardholder-name">Cardholder Name</label>
-        <input ref={cardHolder} type="text" id="cardholder-name" name="cardholder-name" required />
+        <input onChange={(event) => handleInputChange('holder', event)} type="text" id="cardholder-name" name="cardholder-name" required />
       </div>
 
       <div className="form-row">
         <div className="form-group">
           <label htmlFor="expiry-date">Expiry Date</label>
-          <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required maxLength={5} />
+          <input onBlur={() => handleInputBlur('expiryDate')} onChange={(event) => handleInputChange('expiryDate', event)} id="expiry-date" name="expiry-date" placeholder="MM/YY" required maxLength={5} />
+          {isDateInvalid && <span className='form-error-message'>Invalid Date</span>}
         </div>
 
         <div className="form-group">
           <label htmlFor="cvv">CVV</label>
-          <input ref={cardCvv} type="password" id="cvv" name="cvv" required maxLength={3} />
+          <input onChange={(event) => handleInputChange('cvv', event)} type="password" id="cvv" name="cvv" required maxLength={3} />
         </div>
 
         <div className="form-group">
           <label htmlFor="provider">Provider</label>
-          <select ref={cardProvider} id="provider" name="provider" required>
+          <select onChange={(event) => handleInputChange('provider', event)} id="provider" name="provider" required>
             <option value="visa">Visa</option>
             <option value="master-card">Master Card</option>
           </select>
@@ -96,20 +101,19 @@ function NewCard({ onClose }) {
         <div className='card-color-selections'>
           {CARD_COLORS.map(color => (
             <div
-              onClick={() => chooseCardColor(color)}
+              onClick={() => handleChooseCardColor(color)}
               key={color}
-              className={`card-color-select ${cardColor === color ? 'active' : ''} bg-card-${color}`}
+              className={`card-color-select ${newCard['color'] === color ? 'active' : ''} bg-card-${color}`}
             ></div>
           ))}
         </div>
       </div>
 
-      <button type="button" onClick={handleAddCard} className="form-button">Add Card</button>
+
+      <button disabled={isCardInvalid} className={`form-button ${isCardInvalid || isDateInvalid ? 'disabled' : ''}`}>Add Card</button>
 
 
-
-
-    </form>
+    </form >
 
   );
 }

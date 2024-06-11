@@ -1,69 +1,85 @@
-import React, { useRef, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import BankingContext from 'store/banking-context';
 import Transaction from 'models/TransactionModel';
 import './NewTransaction.css'
 import './Form.css'
+import { getTodayDate } from 'utils/other';
 
 
 function NewTransaction({ onClose }) {
 
   const { cards, addTransaction } = useContext(BankingContext)
+  const fromAccount = useRef()
 
-  const transactionAmount = useRef();
-  const transactionTitle = useRef();
-  const transactionAccount = useRef();
+  const [newTransaction, setNewTransaction] = useState({
+    amount: 0, title: '', date: '', fromAccount: cards[0].number
+  })
 
-  function resetInputs() {
-    if (transactionAmount.current) transactionAmount.current.value = '';
-    if (transactionTitle.current) transactionTitle.current.value = '';
-    if (transactionAccount.current) transactionAccount.current.value = '';
+  const [didEdit, setDidEdit] = useState({
+    amount: false, fromAccount: false
+  })
+
+  const isCardInvalid = cards.length === 0 || (didEdit.fromAccount && !checkCardBalance())
+
+  function handleInputBlur(key) {
+    setDidEdit(prevEdit => ({ ...prevEdit, [key]: true }));
   }
 
-  function handleAddTransaction() {
-    const transaction = new Transaction(
-      transactionAmount.current.value,
-      transactionTitle.current.value,
-      '01/06/2024',
-      transactionAccount.current.value,
-    );
+  function handleInputChange(key, event) {
+    setNewTransaction(transaction => {
+      return { ...transaction, [key]: event.target.value }
+    })
+  }
+
+  function checkCardBalance() {
+    const currentCard = cards.find(card => card.number === newTransaction['fromAccount']);
+    return currentCard.balance >= newTransaction['amount']
+  }
+
+
+  function handleAddTransaction(event) {
+    const transaction = new Transaction({ ...newTransaction });
     addTransaction(transaction);
-    resetInputs()
+    event.target.reset()
     onClose();
   }
 
   return (
 
-    <form className="transaction-form">
+    <form onSubmit={handleAddTransaction} className="transaction-form">
 
       <div className="form-group">
         <label htmlFor="amount">Amount</label>
-        <input ref={transactionAmount} type="number" id="amount" name="amount" required />
+        <input onChange={(event) => handleInputChange('amount', event)} onBlur={() => handleInputBlur('amount')} type="number" id="amount" name="amount" required />
       </div>
 
       <div className="form-group">
         <label htmlFor="title">Title</label>
-        <input ref={transactionTitle} type="text" id="title" name="title" required />
+        <input onChange={(event) => handleInputChange('title', event)} type="text" id="title" name="title" required />
       </div>
 
 
       <div className="form-row">
         <div className="form-group">
           <label htmlFor="date">Date</label>
-          <input type="date" id="date" name="date" required />
+          <input defaultValue={getTodayDate()} onChange={(event) => handleInputChange('date', event)} type="date" id="date" name="date" required />
         </div>
 
         <div className="form-group">
           <label htmlFor="from-account">From account</label>
-          <select ref={transactionAccount} id="from-account" name="from-account" required>
+          <select ref={fromAccount} onChange={(event) => handleInputChange('fromAccount', event)} onBlur={() => handleInputBlur('fromAccount')} id="from-account" name="from-account" required>
             {cards.map(card => (
               <option key={card.number} value={card.number}>*{card.number.slice(-4)}</option>
             ))}
           </select>
+
+          {isCardInvalid && <span className='form-error-message'>Insufficient Fund</span>}
+
         </div>
 
       </div>
 
-      <button type='button' onClick={handleAddTransaction} className="form-button disabled">Add Transaction</button>
+      <button disabled={isCardInvalid} className={`form-button ${isCardInvalid ? 'disabled' : ''}`}>Add Transaction</button>
 
     </form>
 

@@ -1,13 +1,14 @@
 import Card from 'models/CardModel';
 import Transaction from 'models/TransactionModel';
 
-const sampleCard1 = new Card('Bank of America', '1234567890123456', 5000, 'John Doe', '12/25', '123', 'warm-red', 'visa');
-const sampleCard2 = new Card('Chase Bank', '9876543210987654', 3000, 'Jane Smith', '11/23', '456', 'cool-purple', 'master-card');
+const sampleCard1 = new Card({ bank: 'Bank of America', number: '1234567890123456', balance: 5000, holder: 'John Doe', expiryDate: '12/25', cvv: '123', color: 'warm-red', provider: 'visa' });
+const sampleCard2 = new Card({ bank: 'Chase Bank', number: '9876543210987654', balance: 3000, holder: 'Jane Smith', expiryDate: '12/23', cvv: '456', color: 'cool-purple', provider: 'master-card' });
 const SAMPLE_CARDS = [sampleCard1, sampleCard2]
 
 
-const transaction1 = new Transaction(100, 'Groceries', '2024-06-01', '1234567890123456');
-const transaction2 = new Transaction(50, 'Dinner', '2024-05-30', '9876543210987654');
+const transaction1 = new Transaction({ amount: 100, title: 'Groceries', date: '2024-06-01', fromAccount: '1234567890123456' });
+const transaction2 = new Transaction({ amount: 50, title: 'Dinner', date: '2024-05-30', fromAccount: '9876543210987654' });
+
 const SAMPLE_TRANSACTIONS = [transaction1, transaction2]
 
 

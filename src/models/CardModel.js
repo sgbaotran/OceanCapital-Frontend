@@ -1,14 +1,14 @@
 export default class Card {
 
-  constructor(bankName, cardNumber, cardBalance, cardHolder, cardExpiryDate, cardCvv, cardColor, cardProvider) {
-    this.name = bankName
-    this.number = cardNumber
-    this.balance = cardBalance
-    this.holder = cardHolder
-    this.expiryDate = cardExpiryDate
-    this.cvv = cardCvv
-    this.color = cardColor
-    this.provider = cardProvider
+  constructor({ bank, number, balance, holder, expiryDate, cvv, color, provider }) {
+    this.bank = bank
+    this.number = number
+    this.balance = balance
+    this.holder = holder
+    this.expiryDate = expiryDate
+    this.cvv = cvv
+    this.color = color
+    this.provider = provider
   }
 
 }

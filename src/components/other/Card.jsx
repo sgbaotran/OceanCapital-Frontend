@@ -26,7 +26,7 @@ function Card(card) {
         <div className="left">
           {/* Bank logo */}
           <img src={require("assets/images/BTC.png")} alt="TD" />
-          <h2><strong>{card.name}</strong></h2>
+          <h2><strong>{card.bank}</strong></h2>
 
         </div>
         {/* Card provider logo */}
