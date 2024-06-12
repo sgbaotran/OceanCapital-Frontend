@@ -8,6 +8,7 @@ import Wallet from 'pages/Wallet';
 import Transaction from 'pages/Transaction';
 import Analytic from 'pages/Analytic';
 import BankContextProvider from 'store/banking-context';
+import UserContextProvider from 'store/user-context';
 
 
 
@@ -30,9 +31,12 @@ const router = createBrowserRouter([
 function App() {
 
   return (
-    <BankContextProvider>
-      <RouterProvider router={router} />
-    </BankContextProvider>
+    <UserContextProvider>
+      <BankContextProvider>
+        <RouterProvider router={router} />
+      </BankContextProvider>
+    </UserContextProvider>
+
 
   );
 }

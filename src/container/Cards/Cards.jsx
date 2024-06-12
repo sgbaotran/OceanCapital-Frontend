@@ -9,10 +9,8 @@ import NewCard from 'components/form/NewCard';
 
 
 function CardContainer() {
-  console.log()
 
   const [isModalOpen, setIsModalOpen] = useState(false)
-
 
   const { cards } = useContext(BankingContext)
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { formatCardNumber, hideCardNumber } from 'utils/cards';
+import { formatCardNumber, hideCardNumber, formatCardBalance } from 'utils/cards';
 import './Card.css'
 
 
@@ -37,7 +37,7 @@ function Card(card) {
         <div onClick={handleShowCardNum}>
           {/* Display either the formatted or masked card number based on the state */}
           <h3 className="card-number">{showCardNum ? formatCardNumber(card.number) : hideCardNumber(card.number)}</h3>
-          <h2><strong>${card.balance.toLocaleString()}</strong></h2>
+          <h2><strong>${formatCardBalance(card.balance)}</strong></h2>
         </div>
 
         {/* Card chip image */}

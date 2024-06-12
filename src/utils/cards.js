@@ -18,3 +18,6 @@ export function calculateBalance(card, transactions) {
   return (card.balance - expense).toLocaleString()
 
 }
+export function formatCardBalance(balance) {
+  return balance.toLocaleString()
+}

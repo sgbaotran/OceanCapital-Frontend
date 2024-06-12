@@ -1,6 +1,8 @@
 import './Navbar.css';
 
 export default function Navbar({ onSetDarkMode }) {
+  const { firstName, lastName } = useContext(UserContext)
+
     return (
         <nav>
             <div className="container">
@@ -28,7 +30,7 @@ export default function Navbar({ onSetDarkMode }) {
                         <div className="profile-photo">
                             <img src={require("assets/images/profile-1.jpg")} alt="profile pic" />
                         </div>
-                        <h5>Stephen</h5>
+                        <h5>{firstName + ' ' + lastName}</h5>
                         <span className="material-icons-sharp">expand_more</span>
                     </div>
 

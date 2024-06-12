@@ -33,8 +33,6 @@ function bankReducer(state, action) {
 
 }
 
-
-
 export default function BankContextProvider({ children }) {
   const [state, dispatchBankAction] = useReducer(bankReducer, { ...SAMPLE_CONTEXT })
 
@@ -52,8 +50,6 @@ export default function BankContextProvider({ children }) {
     addCard: (card) => handleAddCard(card),
     addTransaction: (transaction) => handleAddTransaction(transaction)
   }
-
-  console.log(bankContext)
 
   return (<BankingContext.Provider value={bankContext}>
     {children}

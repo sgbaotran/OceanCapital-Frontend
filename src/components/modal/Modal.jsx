@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import './Modal.css';
+import { createPortal } from 'react-dom';
 
 function Modal({ open, onClose, content, children }) {
   const dialog = useRef();
@@ -13,7 +14,7 @@ function Modal({ open, onClose, content, children }) {
   }, [open]);
 
 
-  return (
+  return createPortal(
     <dialog ref={dialog} className='modal' onClose={onClose}>
       <div className='modal-header'>
         <h2>Add New {content}</h2>
@@ -23,6 +24,8 @@ function Modal({ open, onClose, content, children }) {
         {open ? children : null}
       </div>
     </dialog>
+    ,
+    document.getElementById('modal')
   )
 };
 
