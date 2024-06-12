@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { formatCardNumber, hideCardNumber,calculateBalance } from 'utils/CardUtils';
+import { formatCardNumber, hideCardNumber } from 'utils/cards';
 import './Card.css'
 
 

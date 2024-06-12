@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import './NewCard.css'
 import './Form.css'
-import BankingContext from 'store/banking-context';
+import {BankingContext} from 'store/banking-context';
 import Card from 'models/CardModel';
 import { CARD_COLORS } from 'sample-data/model';
 

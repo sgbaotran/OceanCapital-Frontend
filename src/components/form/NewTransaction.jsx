@@ -1,5 +1,5 @@
 import React, { useState, useContext, useRef } from 'react';
-import BankingContext from 'store/banking-context';
+import { BankingContext } from 'store/banking-context';
 import Transaction from 'models/TransactionModel';
 import './NewTransaction.css'
 import './Form.css'

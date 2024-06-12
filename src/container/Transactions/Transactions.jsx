@@ -4,7 +4,7 @@ import Transaction from 'components/other/Transaction';
 import './Transactions.css'
 import { useState, useContext } from 'react';
 import NewTransactionButton from 'components/button/NewTransactionButton';
-import BankingContext from 'store/banking-context';
+import {BankingContext} from 'store/banking-context';
 import Modal from 'components/modal/Modal';
 import NewTransaction from 'components/form/NewTransaction';
 import ErrorMessage from 'components/form/ErrorMessage';

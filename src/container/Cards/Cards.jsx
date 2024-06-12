@@ -2,13 +2,14 @@ import React, { useContext, useState } from 'react';
 import './Cards.css';
 import Card from 'components/other/Card';
 import NewCardButton from 'components/button/NewCardButton';
-import BankingContext from 'store/banking-context';
+import {BankingContext} from 'store/banking-context';
 import Modal from 'components/modal/Modal';
 import NewCard from 'components/form/NewCard';
 
 
 
 function CardContainer() {
+  console.log()
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
