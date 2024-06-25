@@ -1,18 +1,20 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './Cards.css';
 import Card from 'components/other/Card';
 import NewCardButton from 'components/button/NewCardButton';
-import {BankingContext} from 'store/banking-context';
+
 import Modal from 'components/modal/Modal';
 import NewCard from 'components/form/NewCard';
+import { useSelector } from 'react-redux';
 
 
 
 function CardContainer() {
-
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const { cards } = useContext(BankingContext)
+  // const { cards } = useContext(BankingContext)
+
+  const { cards } = useSelector(state => state.cards)
 
   // METHOD 1
   // const modal = useRef()
@@ -40,9 +42,12 @@ function CardContainer() {
       </DeprecatedModal> */}
 
       {/* Modal for adding a new card */}
-      <Modal content="Card" onClose={handleCloseModal} open={isModalOpen}>
+      {isModalOpen ? <Modal content="Card" onClose={handleCloseModal} open={isModalOpen}>
         <NewCard onClose={handleCloseModal} />
-      </Modal>
+      </Modal> : undefined
+
+      }
+
 
 
       <div className='cards-container'>

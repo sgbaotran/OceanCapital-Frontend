@@ -1,7 +1,6 @@
 import { createContext, useReducer } from "react";
 import SAMPLE_CONTEXT from "sample-data/sampleContext";
 
-
 export const BankingContext = createContext({
   cards: [],
   transactions: [],
@@ -14,7 +13,6 @@ function bankReducer(state, action) {
 
   switch (action.type) {
     case 'ADD_CARD':
-
       currentDatas.cards.push(action.card)
       break
 
@@ -26,15 +24,19 @@ function bankReducer(state, action) {
       currentDatas.transactions.push(transaction)
       break
 
+    case 'UPDATE_EVERYTHING':
+      return { ...action.data }
+
     default:
       break;
   }
   return { ...currentDatas }
-
 }
 
 export default function BankContextProvider({ children }) {
-  const [state, dispatchBankAction] = useReducer(bankReducer, { ...SAMPLE_CONTEXT })
+
+
+  const [state, dispatchBankAction] = useReducer(bankReducer, SAMPLE_CONTEXT)
 
   function handleAddCard(card) {
     dispatchBankAction({ type: 'ADD_CARD', card: card })
@@ -42,13 +44,17 @@ export default function BankContextProvider({ children }) {
 
   function handleAddTransaction(transaction) {
     dispatchBankAction({ type: 'ADD_TRANSACTION', transaction: transaction })
+  }
 
+  function updateContext(data) {
+    dispatchBankAction({ type: 'UPDATE_CONTEXT', data: data })
   }
 
   const bankContext = {
     ...state,
     addCard: (card) => handleAddCard(card),
-    addTransaction: (transaction) => handleAddTransaction(transaction)
+    addTransaction: (transaction) => handleAddTransaction(transaction),
+    updateContext: (data) => updateContext(data)
   }
 
   return (<BankingContext.Provider value={bankContext}>

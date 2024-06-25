@@ -2,18 +2,21 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Transaction from 'components/other/Transaction';
 import './Transactions.css'
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import NewTransactionButton from 'components/button/NewTransactionButton';
-import {BankingContext} from 'store/banking-context';
 import Modal from 'components/modal/Modal';
 import NewTransaction from 'components/form/NewTransaction';
 import ErrorMessage from 'components/form/ErrorMessage';
-
+import { useSelector } from 'react-redux';
 
 function TransactionContainer() {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const { cards, transactions } = useContext(BankingContext)
+
+
+  const { cards } = useSelector(state => state.cards)
+  const { transactions } = useSelector(state => state.transactions)
+
 
   function handleAddTransaction() {
     setIsModalOpen(true)
@@ -41,13 +44,14 @@ function TransactionContainer() {
       </DeprecatedModal> */}
 
       {/* Modal for adding a new card */}
-      <Modal content="Transaction" onClose={handleCloseModal} open={isModalOpen}>
+      {isModalOpen ? <Modal content="Transaction" onClose={handleCloseModal} open={isModalOpen}>
         {
           cards.length !== 0 ?
             <NewTransaction onClose={handleCloseModal} /> :
             <ErrorMessage onClose={handleCloseModal} message={"There is no fund to create transaction!"} />
         }
-      </Modal>
+      </Modal> : undefined
+      }
 
       <div className="recent-transactions-container">
 

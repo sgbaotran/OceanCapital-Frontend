@@ -1,7 +1,9 @@
 import './Navbar.css';
+import { useContext } from 'react';
+import { UserContext } from 'store/user-context';
 
 export default function Navbar({ onSetDarkMode }) {
-  const { firstName, lastName } = useContext(UserContext)
+    const { firstName, lastName } = useContext(UserContext)
 
     return (
         <nav>
