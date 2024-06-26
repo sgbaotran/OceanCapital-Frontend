@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import './Cards.css';
 import Card from 'components/other/Card';
 import NewCardButton from 'components/button/NewCardButton';
@@ -8,13 +8,12 @@ import NewCard from 'components/form/NewCard';
 import { useSelector } from 'react-redux';
 
 
-
 function CardContainer() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   // const { cards } = useContext(BankingContext)
 
-  const { cards } = useSelector(state => state.cards)
+  const cards = useSelector((state) => (state.app.cards))
 
   // METHOD 1
   // const modal = useRef()
@@ -32,7 +31,6 @@ function CardContainer() {
   function handleCloseModal() {
     setIsModalOpen(false)
   }
-
   return (
     <>
 
@@ -45,10 +43,7 @@ function CardContainer() {
       {isModalOpen ? <Modal content="Card" onClose={handleCloseModal} open={isModalOpen}>
         <NewCard onClose={handleCloseModal} />
       </Modal> : undefined
-
       }
-
-
 
       <div className='cards-container'>
         {cards.map(card => (

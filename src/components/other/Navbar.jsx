@@ -1,9 +1,10 @@
 import './Navbar.css';
-import { useContext } from 'react';
-import { UserContext } from 'store/user-context';
+import { useSelector } from 'react-redux';
 
 export default function Navbar({ onSetDarkMode }) {
-    const { firstName, lastName } = useContext(UserContext)
+
+    const firstName = useSelector((state) => (state.app.firstName))
+    const lastName = useSelector((state) => (state.app.lastName))
 
     return (
         <nav>
@@ -15,10 +16,10 @@ export default function Navbar({ onSetDarkMode }) {
                 </div>
 
                 {/* Search bar */}
-                <div className="search-bar">
+                {/* <div className="search-bar">
                     <span className="material-icons-sharp">search</span>
                     <input type="search" placeholder="Search" />
-                </div>
+                </div> */}
 
                 <div className="profile-area">
                     {/* Theme toggle button */}

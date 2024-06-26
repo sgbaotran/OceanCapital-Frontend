@@ -1,14 +1,16 @@
-import React, { useState, useContext, useRef } from 'react';
-import { BankingContext } from 'store/banking-context';
-import Transaction from 'models/TransactionModel';
+import React, { useState, useRef } from 'react';
+
 import './NewTransaction.css'
 import './Form.css'
 import { getTodayDate } from 'utils/other';
+import { useDispatch, useSelector } from 'react-redux';
+import { appAction } from 'store';
 
 
 function NewTransaction({ onClose }) {
 
-  const { cards, addTransaction } = useContext(BankingContext)
+  const cards = useSelector((state) => (state.app.cards))
+
   const fromAccount = useRef()
 
   const [newTransaction, setNewTransaction] = useState({
@@ -18,6 +20,9 @@ function NewTransaction({ onClose }) {
   const [didEdit, setDidEdit] = useState({
     amount: false, fromAccount: false
   })
+
+
+  const dispatch = useDispatch()
 
   const isCardInvalid = cards.length === 0 || (didEdit.fromAccount && !checkCardBalance())
 
@@ -36,10 +41,8 @@ function NewTransaction({ onClose }) {
     return currentCard.balance >= newTransaction['amount']
   }
 
-
   function handleAddTransaction(event) {
-    const transaction = new Transaction({ ...newTransaction });
-    addTransaction(transaction);
+    dispatch(appAction.addTransaction(newTransaction))
     event.target.reset()
     onClose();
   }

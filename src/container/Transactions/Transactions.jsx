@@ -9,13 +9,14 @@ import NewTransaction from 'components/form/NewTransaction';
 import ErrorMessage from 'components/form/ErrorMessage';
 import { useSelector } from 'react-redux';
 
+
 function TransactionContainer() {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const cards = useSelector((state) => (state.app.cards))
 
+  const transactions = useSelector((state) => (state.app.transactions))
 
-  const { cards } = useSelector(state => state.cards)
-  const { transactions } = useSelector(state => state.transactions)
 
 
   function handleAddTransaction() {

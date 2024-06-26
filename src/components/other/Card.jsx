@@ -5,6 +5,7 @@ import './Card.css'
 
 
 function Card(card) {
+
   // State to toggle the display of the full card number
   const [showCardNum, setShowCardNum] = useState(false);
   // State to toggle the display of the CVV

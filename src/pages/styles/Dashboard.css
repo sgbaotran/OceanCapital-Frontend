@@ -8,8 +8,8 @@ main section.middle .header {
 main section.middle .header input[type="date"] {
   padding: 0.5rem 2rem;
   border-radius: var(--border-radius-2);
-  background: var(--color-white);
-  color: var(--color-gray-dark);
+  /* background: var(--color-white); */
+  /* color: var(--color-gray-dark); */
 }
 
 

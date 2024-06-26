@@ -68,7 +68,7 @@ aside .updates h4 {
   margin: 1rem 0;
 }
 
-aside .updates a {
+aside .updates button {
   display: block;
   width: 100%;
   background: var(--color-primary);
@@ -76,12 +76,9 @@ aside .updates a {
   border-radius: var(--border-radius-1);
   padding: 0.8rem 0;
   margin-top: 2rem;
-  transition: all 30ms ease;
+  cursor: pointer;
 }
 
-aside .updates a:hover {
-  box-shadow: 0 1rem 2rem var(--color-primary-light);
-}
 
 
 @media screen and (max-width:1024px) {

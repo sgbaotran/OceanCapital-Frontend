@@ -8,7 +8,7 @@ function InvestmentContainer(props) {
 
 
   return (
-    <div className="investments">
+    <div className="investments-container">
 
       <div className="header">
         <h1>Investments</h1>

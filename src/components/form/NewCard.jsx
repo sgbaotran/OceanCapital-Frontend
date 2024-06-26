@@ -1,20 +1,22 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import './NewCard.css'
 import './Form.css'
-import {BankingContext} from 'store/banking-context';
-import Card from 'models/CardModel';
 import { CARD_COLORS } from 'sample-data/model';
+import { useDispatch } from 'react-redux';
+import { appAction } from 'store';
 
 function NewCard({ onClose }) {
 
-  const { addCard } = useContext(BankingContext)
+
   const [newCard, setNewCard] = useState({
     bank: '', number: '', balance: 0, holder: '', expiryDate: '', cvv: '', color: "warm-red", provider: 'visa',
   })
+
   const [didEdit, setDidEdit] = useState({
     number: false, expiryDate: false, cvv: false,
   })
 
+  const dispatch = useDispatch()
 
   function checkCardNumber(number) {
     const cardNumberRegex = /^\d+$/;
@@ -48,8 +50,7 @@ function NewCard({ onClose }) {
 
   function handleAddCard(event) {
     event.preventDefault()
-    const card = new Card({ ...newCard });
-    addCard(card)
+    dispatch(appAction.addCard(newCard))
     onClose()
     event.target.reset()
   }

@@ -1,6 +1,6 @@
 
 import CardContainer from 'container/Cards/Cards';
-import React, { useContext } from 'react';
+import React from 'react';
 import MonthlyReportContainer from 'container/MonthlyReports/MonthlyReports';
 import Chart from 'components/other/Chart';
 import InvestmentContainer from 'container/Investments/Investments';
@@ -9,12 +9,13 @@ import TransactionContainer from 'container/Transactions/Transactions';
 import "./styles/Dashboard.css"
 
 import GroupContainer from 'container/Groups/Groups';
-import { UserContext } from 'store/user-context';
+import { useSelector } from 'react-redux';
 
 
 function Dashboard() {
-  const { firstName } = useContext(UserContext)
 
+
+  const firstName = useSelector((state) => (state.app.firstName))
 
   return (
     <>
