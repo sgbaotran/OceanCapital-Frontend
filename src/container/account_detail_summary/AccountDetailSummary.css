@@ -1,0 +1,45 @@
+.account-details-container {
+  margin-top: 3rem;
+  border-radius: var(--card-border-radius);
+  background-color: var(--color-background-1);
+  margin-bottom: 3rem;
+  padding: var(--card-padding);
+}
+
+.account-details-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.account-details-container input {
+  color: var(--color-text-1);
+  background-color: var(--color-background-2);
+  border: none;
+  padding: 0.5rem;
+  border-radius: var(--border-radius-1);
+}
+
+.account-details-container input[type="date"] {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.account-details-container .chart {
+  margin-top: 1rem;
+}
+
+canvas.account-details {
+  color: var(--color-text-2);
+  max-width: 100%;
+  border-radius: var(--card-border-radius);
+  padding: 1.5rem;
+  background-color: var(--color-background-2); /* Add background color to make the chart more visible */
+}
+
+@media screen and (max-width: 1024px) {
+  canvas.account-details {
+    margin: 3rem 0 1rem !important;
+  }
+}

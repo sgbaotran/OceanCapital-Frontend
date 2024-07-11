@@ -1,53 +1,44 @@
 
-import CardContainer from 'container/Cards/Cards';
 import React from 'react';
-import MonthlyReportContainer from 'container/MonthlyReports/MonthlyReports';
-import Chart from 'components/other/Chart';
-import InvestmentContainer from 'container/Investments/Investments';
-import TransactionContainer from 'container/Transactions/Transactions';
+import Cards from 'container/cards/Cards';
 
-import "./styles/Dashboard.css"
+import RecentInvestments from 'container/recent_investments/RecentInvestments';
+import RecentTransactions from 'container/recent_transactions/RecentTransactions';
 
-import GroupContainer from 'container/Groups/Groups';
-import { useSelector } from 'react-redux';
+import "./Dashboard.css"
+import ExpenseSummary from 'container/expense_summary/ExpenseSummary';
+import AccountDetailSummary from 'container/account_detail_summary/AccountDetailSummary';
+import PortfolioSummary from 'container/portfolio_summary/PortfolioSummary';
+
 
 
 function Dashboard() {
 
 
-  const firstName = useSelector((state) => (state.app.firstName))
+
 
   return (
     <>
 
-
       <section className="middle">
 
+   
+        <Cards />
 
-        <div className="header">
-          <h1>Hello, {firstName} </h1>
-          <input type="date" />
-        </div>
+        <PortfolioSummary />
 
-
-        <CardContainer />
-
-        <MonthlyReportContainer />
-
-        <GroupContainer />
-
-        <Chart />
-
+        <AccountDetailSummary />
 
       </section >
 
 
 
       <section className="right">
+        <ExpenseSummary />
 
-        <InvestmentContainer></InvestmentContainer>
+        <RecentInvestments showLink={true} />
 
-        <TransactionContainer></TransactionContainer>
+        <RecentTransactions showLink={true} />
 
       </section >
 

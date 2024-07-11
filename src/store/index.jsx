@@ -1,5 +1,6 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
-import SAMPLE_CONTEXT from "sample-data/sampleContext";
+
+import SAMPLE_CONTEXT from "sample-data/datas";
 
 const initialState = SAMPLE_CONTEXT
 
@@ -8,12 +9,27 @@ const appSlice = createSlice({
   initialState,
   reducers: {
     addCard(state, action) {
-      state.cards.push(action.payload)
+      state.cards.unshift({ id: state.cards.length + 1, ...action.payload })
 
     },
     addTransaction(state, action) {
-      state.transactions.push(action.payload)
+      console.log(state.transactions)
+      
+      state.transactions.unshift({ id: state.transactions.length + 1, ...action.payload })
+      
+      console.log(state.transactions)
+    },
+    editTransactions(state, action) {
+      const { selectedTransactions, transaction } = action.payload;
+
+
+      state.transactions = state.transactions.map(trans =>
+        selectedTransactions.includes(trans.id)
+          ? { ...trans, ...transaction }
+          : trans
+      );
     }
+
   }
 })
 

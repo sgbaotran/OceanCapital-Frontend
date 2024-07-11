@@ -5,3 +5,8 @@ export function getTodayDate() {
   const day = String(today.getDate()).padStart(2, '0');
   return `${year}-${month}-${day}`;
 };
+
+
+export function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}

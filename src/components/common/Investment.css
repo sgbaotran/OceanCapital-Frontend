@@ -1,0 +1,36 @@
+.investment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--card-padding);
+  border-bottom: 1px solid var(--color-light);
+}
+
+.investment:hover {
+  background: var(--color-light);
+  cursor: pointer;
+}
+
+.investment .date-time {
+  color: var(--color-text-2);
+}
+
+.investment .bonds {
+  color: var(--color-text-1);
+  margin-left: auto; /* Pushes bonds to the right */
+  min-width: 5rem; /* Adjust width as needed */
+  text-align: right; /* Aligns bonds content to the right */
+}
+
+.investment .investment-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.investment .investment-logo {
+  width: 2rem; /* Adjust size as needed */
+  height: 2rem; /* Adjust size as needed */
+  margin-right: 1rem;
+}

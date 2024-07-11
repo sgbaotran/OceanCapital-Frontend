@@ -12,11 +12,9 @@
 
 .new-transaction-button:hover {
   cursor: pointer;
-  box-shadow: 0 2rem 3rem var(--color-shadow);
-
 }
 
-.new-transaction-button img {
+.new-transaction-button plus-sign {
   opacity: 0.5;
   width: 2.5rem;
   margin: auto;

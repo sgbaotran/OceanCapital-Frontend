@@ -1,0 +1,82 @@
+.expense-summary-container {
+  margin-top: 1rem;
+  border-radius: var(--card-border-radius);
+  background-color: var(--color-background-1);
+  margin-bottom: 2rem;
+  box-shadow: 0px 32px 45px -14px rgba(0, 0, 0, 0.75);
+  padding: var(--card-padding);
+
+}
+
+.expense-summary-container .header {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.expense-summary-container input {
+  padding: 0.5rem 1rem;
+  color: var(--color-text-1);
+  background-color: var(--color-background-2);
+  border: none;
+  border-radius: var(--border-radius-1);
+}
+
+.expense-summary-container .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.expense-summary-container .content .chart {
+  max-width: 50%;
+  flex: 1;
+}
+
+.expense-summary-container .content .label {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.expense-summary-container .content .label li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.expense-summary-container .content .title {
+  color: var(--color-text-1);
+}
+
+.expense-summary-container .content .amount {
+  color: var(--color-text-2);
+}
+
+canvas.expense-summary {
+  color: var(--color-text-2);
+  max-width: 100%;
+  border-radius: var(--card-border-radius);
+  padding: 1.5rem;
+  /* background-color: var(--color-background-2); */
+}
+
+@media screen and (max-width: 1024px) {
+  canvas.expense-summary {
+    margin: 3rem 0 1rem !important;
+  }
+
+  .expense-summary-container .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .expense-summary-container .content .chart,
+  .expense-summary-container .content .label {
+    max-width: 100%;
+  }
+}

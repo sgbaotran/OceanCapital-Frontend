@@ -16,9 +16,9 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { path: '/', element: <Dashboard /> },
+      { path: '/transaction', element: <Transaction /> },
       { path: '/exchange', element: <Exchange /> },
       { path: '/wallet', element: <Wallet /> },
-      { path: '/transaction', element: <Transaction /> },
       { path: '/analytic', element: <Analytic /> },
     ]
   }

@@ -1,6 +1,6 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import './Cards.css';
-import Card from 'components/other/Card';
+import Card from 'components/common/Card';
 import NewCardButton from 'components/button/NewCardButton';
 
 import Modal from 'components/modal/Modal';
@@ -8,7 +8,7 @@ import NewCard from 'components/form/NewCard';
 import { useSelector } from 'react-redux';
 
 
-function CardContainer() {
+function Cards() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   // const { cards } = useContext(BankingContext)
@@ -47,17 +47,14 @@ function CardContainer() {
 
       <div className='cards-container'>
         {cards.map(card => (
-          <Card
-            key={card.number}
-            {...card}
-          />
+          <Card key={card.number} card={card}/>
         ))}
 
         {/* Button that triggers the NewCardModal to show up, styled to look like a card */}
-        <NewCardButton handleOnOpen={handleAddCard} />
+        {/* <NewCardButton handleOnOpen={handleAddCard} /> */}
       </div>
     </>
   );
 }
 
-export default CardContainer;
+export default Cards;

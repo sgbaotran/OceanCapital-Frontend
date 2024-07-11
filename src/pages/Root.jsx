@@ -1,9 +1,9 @@
-import Navbar from 'components/other/Navbar';
-import Sidebar from 'components/other/Sidebar';
+
+import Sidebar from 'components/common/Sidebar';
 import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import './styles/Root.css'
-
+import './Root.css'
+import { useLocation } from 'react-router-dom';
 
 function RootLayout() {
 
@@ -25,16 +25,22 @@ function RootLayout() {
   }
 
 
+  const location = useLocation();
+
+  const currentPath = location.pathname.slice(1) ? location.pathname.slice(1) : 'dashboard';
+
+
+
   return (<>
 
 
-    <Navbar onSetDarkMode={handleSetDarkMode} />
+    {/* <Navbar onSetDarkMode={handleSetDarkMode} /> */}
 
-    <main>
+    <main id={currentPath}>
 
       <Sidebar />
 
-      <Outlet></Outlet>
+      <Outlet />
 
     </main>
   </>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './NewCard.css'
 import './Form.css'
-import { CARD_COLORS } from 'sample-data/model';
+import { CARD_COLORS } from 'sample-data/datas';
 import { useDispatch } from 'react-redux';
 import { appAction } from 'store';
+
 
 function NewCard({ onClose }) {
 

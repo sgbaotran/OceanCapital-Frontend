@@ -1,0 +1,92 @@
+.transaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem var(--card-padding);
+  border-radius: var(--card-border-radius);
+  background: var(--color-white);
+  margin-top: 8px;
+  transition: background-color 0.3s;
+}
+
+
+
+
+.transaction:hover {
+  cursor: pointer;
+  background: var(--color-light);
+}
+
+.transaction .service {
+  display: flex;
+  gap: 1rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.transaction .service .icon {
+  padding: var(--padding-2);
+  border-radius: var(--border-radius-1);
+  background-color: var(--color-background-2);
+  color: var(--color-text-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  min-height: 3rem;
+}
+
+.transaction .service .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 0;
+  flex: 1;
+  max-width:40%; /* Added max-width to make ellipsis appear sooner */
+}
+
+#transaction .transaction .service .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 0;
+  flex: 1;
+  max-width:50%; /* Added max-width to make ellipsis appear sooner */
+}
+
+.transaction .service .details h4 {
+  color: var(--color-text-1);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transaction .service .details p {
+  color: var(--color-text-2);
+  margin: 0;
+}
+
+.card-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-details .card {
+  display: flex;
+  width: 4.6rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-2);
+}
+
+.amount {
+  color: var(--color-text-1);
+  margin: 0;
+  min-width: 5rem;
+  text-align: right;
+}

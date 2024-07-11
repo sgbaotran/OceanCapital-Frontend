@@ -1,28 +1,21 @@
 :root {
-  --color-shadow: rgba(0, 0, 0, 0.3);
-  --color-white: #ffffff !important;
-  --color-light: #f0eff5;
-  --color-gray-light: #86848c;
-  --color-gray-dark: #56555e;
-  --color-dark: #27282f;
+
+
   --color-primary: rgb(0, 119, 255);
   --color-success: rgb(34, 202, 75);
   --color-danger: rgb(255, 67, 54);
   --color-warning: rgb(234, 181, 7);
   --color-purple: rgb(160, 99, 245);
-  --color-primary-light: rgba(71, 7, 234, 0.2);
-  --color-success-light: rgba(34, 202, 75, 0.2);
-  --color-danger-light: rgba(255, 67, 54, 0.2);
-  --color-purple-light: rgba(160, 99, 245, 0.2);
+
+
   --card-padding: 1.6rem;
   --padding-1: 1rem;
   --padding-2: 8px;
-  --card-border-radius: 1.6rem;
+  --card-border-radius: 1rem;
   --border-radius-1: 1rem;
   --border-radius-2: 6px;
 
   /* CARD COLORS */
-
   --color-card-warm-red: linear-gradient(90deg, #bd261b, #ff796f);
   --color-card-cool-purple: linear-gradient(90deg, #27282f, #7f7191);
   --color-card-dark-purple: linear-gradient(90deg, #5d70ff, #5719c2);
@@ -36,10 +29,19 @@
 }
 
 .dark-theme {
-  --color-white: #131316;
-  --color-light: #23232a;
-  --color-dark: #ddd;
-  --color-gray-dark: #adacb5;
+
+
+
+  --color-background-1: rgba(0, 0, 0, 1);
+  --color-background-2: rgba(21, 21, 21, 1);
+  --color-background-3: rgba(66, 66, 66, 1);
+
+  --color-text-1: rgba(255, 255, 255, 1);
+  --color-text-2: rgba(134, 132, 140, 1);
+  --color-muted: rgba(68, 68, 75, 1);
+
+  --color-scrollbar: rgb(19, 19, 19);
+
 }
 
 * {
@@ -51,8 +53,7 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  transition: all 50ms ease;
-
+  /* transition: all 50ms ease; */
 }
 
 html {
@@ -60,10 +61,10 @@ html {
 }
 
 body {
-  background: var(--color-light);
+  background-color: var(--color-background-2);
   font-family: poppins, sans-serif;
   min-height: 100vh;
-  color: var(--color-dark);
+  color: var(--color-text-1);
 }
 
 img {
@@ -75,20 +76,22 @@ h1 {
 }
 
 h2 {
+  font-weight: 600;
   font-size: 1.5rem;
 }
 
 h3 {
+  font-weight: 500;
   font-size: 1.2rem;
 }
 
 h4 {
+  font-weight: 400;
   font-size: 1rem;
 }
 
 h5 {
   font-size: 0.86rem;
-  font-weight: 500;
 }
 
 h6 {
@@ -101,54 +104,69 @@ p {
 }
 
 small {
-  font-weight: 300;
   font-size: .77rem;
 }
 
+
+/* TEXT */
+
+.text-1 {
+  color: var(--color-text-1);
+}
+
+.text-2 {
+  color: var(--color-text-2);
+}
+
+
+.text-primary{
+  color: var(--color-primary)
+}
+
+.text-warning{
+  color: var(--color-warning)
+}
+
 .text-muted {
-  color: var(--color-gray-light);
+  color: var(--color-muted)
 }
 
-.primary {
-  color: var(--color-primary);
-}
-
-.danger {
+.text-danger {
   color: var(--color-danger);
 }
 
-.success {
+.text-success {
   color: var(--color-success);
 }
 
-.purple {
+.text-purple {
   color: var(--color-purple);
 }
 
+
+
+/* BACKGROUND FOR GROUP*/
 .bg-primary {
   background: var(--color-primary);
-  box-shadow: 0 0.8rem 0.8rem var(--color-primary-light);
 }
 
 .bg-danger {
   background: var(--color-danger);
-  box-shadow: 0 0.8rem 0.8rem var(--color-danger-light);
 }
 
 .bg-success {
   background: var(--color-success);
-  box-shadow: 0 0.8rem 0.8rem var(--color-success-light);
 }
 
 .bg-purple {
   background: var(--color-purple);
-  box-shadow: 0 0.8rem 0.8rem var(--color-purple-light);
 }
 
-.bg-dark {
-  background: #27282f;
-  box-shadow: 0 0.8rem 0.8rem var(0, 0, 0, 0.2);
+.bg-warning{
+  background: var(--color-warning)
 }
+
+/* BACKGROUND FOR CARD */
 
 .bg-primary-light {
   background: var(--color-primary-light);

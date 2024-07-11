@@ -1,0 +1,159 @@
+/* ======================== ASIDE & navigations ======================== */
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: var(--color-background-1);
+}
+
+/* Only on mobile and tablets */
+aside button#close-btn {
+  display: none;
+}
+/* navigations STYLING */
+aside .navigations{
+  margin-top: 4rem;
+}
+aside .navigations a {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  height: 4.2rem;
+  color: var(--color-muted);
+  position: relative;
+}
+
+aside .navigations a.active {
+  color: var(--color-text-1);
+}
+
+aside .navigations a span {
+  font-size: 1.7rem;
+  margin-left: 2rem;
+  transition: all 300ms ease;
+}
+
+aside .navigations a:hover span {
+  margin-left: 1.5rem;
+}
+
+aside .navigations h4 {
+}
+
+/* Adjust company logo and name size */
+.company-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem; /* Adjust margin as needed */
+}
+
+.company-logo .logo {
+  width: 4rem; /* Adjust logo size */
+  margin: auto; /* Center the logo */
+}
+
+.company-logo h2 {
+  font-size: 1.3rem; /* Adjust company name font size */
+}
+
+/* ======================== UPDATES ======================== */
+aside .updates {
+  background: var(--color-white);
+  border-radius: var(--border-radius-1);
+  text-align: center;
+  padding: var(--card-padding);
+}
+
+aside .updates span {
+  font-size: 2.8rem;
+}
+
+aside .updates h4 {
+  margin: 1rem 0;
+}
+
+aside .updates button {
+  display: block;
+  width: 100%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--border-radius-1);
+  padding: 0.8rem 0;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  aside {
+    position: fixed !important;
+    top: 0 !important;
+    left: -100% !important;
+    z-index: 3 !important;
+    background: var(--color-white) !important;
+    width: 22rem !important;
+    height: 100vh !important;
+    box-shadow: 2rem 0 2rem var(--color-primary-light) !important;
+    display: none !important;
+    animation: shownavigations 300ms ease forwards !important;
+  }
+
+  @keyframes shownavigations {
+    to {
+      left: 0;
+    }
+  }
+
+  aside button#close-btn {
+    display: inline-block !important;
+    width: 3rem !important;
+    height: 3rem !important;
+    position: absolute !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    z-index: 4 !important;
+    background: transparent !important;
+    color: var(--color-dark) !important;
+  }
+
+  aside .navigations {
+    margin-top: 4rem !important;
+  }
+
+  aside .updates {
+    display: none !important;
+  }
+}
+
+/* Logout section */
+.logout-section {
+  margin-top: auto; /* Push the logout button to the bottom */
+  padding: 1rem;
+  border-top: 1px solid var(--color-border); /* Optional: Add a border above the logout button */
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: transparent;
+  color: var(--color-muted);
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.logout-btn:hover {
+  color: var(--color-text-1);
+}
+
+.logout-btn .material-icons-sharp {
+  font-size: 1.5rem;
+}
+
+.logout-btn h4 {
+  font-size: 1.2rem;
+}

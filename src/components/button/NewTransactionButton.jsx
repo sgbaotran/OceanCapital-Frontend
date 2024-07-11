@@ -5,7 +5,7 @@ function NewTransactionButton({ handleOnOpen }) {
   return (
     <button onClick={handleOnOpen} className="new-transaction-button">
       {/* Button icon for adding a new card */}
-      <img src={require("assets/images/plus-sign.png")} alt='plus sign' />
+      <img className='plus-sign' src={require("assets/images/plus-sign.png")} alt='plus sign' />
     </button>
   );
 }

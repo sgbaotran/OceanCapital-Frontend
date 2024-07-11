@@ -1,0 +1,99 @@
+/*==================== TRANSACTION CONTAINER ====================*/
+
+.transaction-container {
+
+  background: var(--color-background-1);
+  border-radius: var(--card-border-radius);
+  /* Assuming --card-border-radius is defined elsewhere */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  /* Adjust box shadow as needed */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  /* Ensure contents are clipped to container */
+  -webkit-box-shadow: 0px 32px 45px -14px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 32px 45px -14px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 32px 45px -14px rgba(0, 0, 0, 0.75);
+}
+
+
+#transaction .transaction-container {
+  margin-left: auto;
+  margin-right: auto;
+  /* max-width: %; */
+}
+
+.transaction-container img {
+  width: 2.2rem;
+}
+
+.transaction-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--card-padding);
+  padding-bottom: 0;
+  position: sticky;
+  /* Make the header sticky */
+  top: 0;
+  /* Position it at the top of the container */
+  background-color: var(--color-background-1);
+  /* Match container background */
+  z-index: 1;
+  /* Ensure header stays above scrolling content */
+}
+
+#transaction .transaction-container .header {
+  padding-bottom: 1rem !important;
+}
+
+.transaction-container .header a {
+  display: flex;
+  align-items: center;
+  color: var(--color-text-2);
+}
+
+.transaction-container .content {
+  max-height: 400px;
+  /* Adjust the max height as needed */
+  overflow-y: auto;
+  /* Add scrollable overflow */
+  position: relative;
+  /* Ensure the container is positioned relative */
+}
+
+#transaction .transaction-container .content {
+  margin: .5rem;
+}
+
+/* Customize scrollbar */
+.transaction-container .content::-webkit-scrollbar {
+  width: 3px;
+  /* Set width of the scrollbar */
+  background-color: transparent;
+  /* Make scrollbar background transparent */
+}
+
+.transaction-container .content::-webkit-scrollbar-thumb {
+  background-color: var(--color-scrollbar);
+  /* Color of the scrollbar thumb */
+  border-radius: 3px;
+  /* Rounded corners for the thumb */
+}
+
+.transaction-container .content::-webkit-scrollbar-track {
+  background-color: transparent;
+  /* Make scrollbar track background transparent */
+}
+
+@media screen and (max-width: 1024px) {
+  .transaction-container {
+    margin-top: 3rem !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

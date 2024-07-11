@@ -1,0 +1,26 @@
+#dashboard {
+  display: grid;
+  grid-template-columns: 12.5rem auto 30rem;
+  gap: 2rem;
+  width: 98%;
+  /* margin: 0rem; */
+}
+
+#transaction {
+  display: grid;
+  grid-template-columns: 12.5rem auto;
+  gap: 2rem;
+  width: 98%;
+  /* margin: 0rem; */
+}
+
+main .page-header {
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+@media screen and (max-width:1024px) {
+  main {
+    grid-template-columns: 1fr !important;
+  }
+}

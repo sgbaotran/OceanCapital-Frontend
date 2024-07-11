@@ -1,5 +1,4 @@
 .new-card-button:hover {
-  box-shadow: 0 2rem 3rem var(--color-shadow);
   cursor: pointer;
 }
 
@@ -15,7 +14,7 @@
 
 }
 
-.new-card-button img {
+.new-card-button .plus-sign {
   opacity: 0.5;
   width: 6rem;
   margin: auto;

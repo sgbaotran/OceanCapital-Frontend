@@ -1,0 +1,29 @@
+
+.badges {
+  display: flex;
+  gap: 1rem;
+  align-self: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+.badge span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.badge {
+  padding: .6rem var(--card-padding);
+  background: var(--color-background-1);
+  border-radius: var(--border-radius-2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.badge:hover {
+  cursor: pointer;
+}
+.badge div {
+  display: flex;
+  gap: 2rem;
+  align-self: center;
+}
